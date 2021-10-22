@@ -16,7 +16,7 @@ public class ConsoleLecture {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter something: ");
         String userInput = scanner.nextLine();
-        System.out.println("You entered: --> \"" + userInput + "\" <--");
+        System.out.printf("You entered: %s", userInput);
 
     }
 }
