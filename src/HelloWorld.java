@@ -12,13 +12,13 @@ public class HelloWorld {
         long myNumber = 123;
         System.out.println(myNumber);
 
-//        int x = 5;
-//        System.out.println(x++);
-//        System.out.println(x);
+        int x = 5;
+        System.out.println(x++);
+        System.out.println(x);
 
-//        int x = 5;
-//        System.out.println(++x);
-//        System.out.println(x);
+        int X = 5;
+        System.out.println(++X);
+        System.out.println(X);
 
         String theNumberThree = "three";
         Object o = theNumberThree;
