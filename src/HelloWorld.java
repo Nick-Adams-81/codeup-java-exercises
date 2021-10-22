@@ -1,7 +1,8 @@
+
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.print("Hello, ");
-        System.out.print("World!");
+//        System.out.print("Hello, ");
+//        System.out.print("World!");
 
 
         int myFavoriteNumber = 40;
@@ -9,21 +10,21 @@ public class HelloWorld {
         String myString = "this is my string!";
         System.out.println(myString);
 
-        long myNumber = 123;
+        long myNumber = 123L;
         System.out.println(myNumber);
 
 //        int x = 5;
 //        System.out.println(x++);
 //        System.out.println(x);
 
-        int X = 5;
-        System.out.println(++X);
-        System.out.println(X);
+//        int X = 5;
+//        System.out.println(++X);
+//        System.out.println(X);
 
 //        String theNumberThree = "three";
 //        Object o = theNumberThree;
 //        int three = (int) o;
-        //int three = (int) "three";
+//        int three = (int) "three";
 
 //        int x = 4;
 //        //x = x + 5;
@@ -32,7 +33,7 @@ public class HelloWorld {
 
 //        int x = 3;
 //        int y = 4;
-//        y = y * x;
+//        //y = y * x;
 //        y *= x;
 //        System.out.println(y);
 
@@ -46,6 +47,7 @@ public class HelloWorld {
         System.out.println(x);
         System.out.println(y);
 
-
     }
 }
+
+

@@ -25,5 +25,7 @@ public class SyntaxLecture {
         int almostPi = (int) pi;
         System.out.println("This is pi: " + pi);
         System.out.println("This is almost pi: " + almostPi);
+
+
     }
 }
