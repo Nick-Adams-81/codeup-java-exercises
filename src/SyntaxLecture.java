@@ -20,5 +20,10 @@ public class SyntaxLecture {
 
         System.out.println("This is a long: " + (morePrecise + 1000000000L));
 
+        // explicit casting
+        double pi = 3.14159;
+        int almostPi = (int) pi;
+        System.out.println("This is pi: " + pi);
+        System.out.println("This is almost pi: " + almostPi);
     }
 }
