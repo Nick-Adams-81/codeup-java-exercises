@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class ConsoleExercises {
+
     public static void main(String[] args) {
         double pi = 3.14159;
         System.out.printf("The value of pi is approximately: %s \n", pi);
@@ -26,10 +27,6 @@ public class ConsoleExercises {
         float input1 = scanner.nextFloat();
         float input2 = scanner.nextFloat();
         System.out.println("The area of the room would be: " + (input1 * input2) + ", The perimeter of this room would be " + ((input1 * input1) + (input2 * input2)));
-
-
-
-
 
     }
 }
