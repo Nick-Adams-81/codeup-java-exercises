@@ -42,5 +42,10 @@ public class ControlAndLoopsPractice {
             System.out.println("You will see this despite the condition!");
         } while (false);
 
+        // for loop
+        for(int j = 0; j < 10; j += 1) {
+            System.out.println("i is " + j);
+        }
+
     }
 }
