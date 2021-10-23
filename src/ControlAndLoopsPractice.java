@@ -37,5 +37,10 @@ public class ControlAndLoopsPractice {
             i++;
         }
 
+        // do loop
+        do {
+            System.out.println("You will see this despite the condition!");
+        } while (false);
+
     }
 }
