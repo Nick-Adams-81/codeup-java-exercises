@@ -56,7 +56,14 @@ public class ControlAndLoopsPractice {
                 break; // --------------+
             } //                        |
         } //                            |
-// <----------------------------+
+
+        // continue statement
+        for(int k = 1; k <= 10; k++) { // <--+
+            if(k % 2 == 1) { //              |
+                continue; // ----------------+
+            }
+            System.out.println(k);
+        }
 
     }
 }
