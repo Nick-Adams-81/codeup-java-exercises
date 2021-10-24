@@ -47,5 +47,16 @@ public class ControlAndLoopsPractice {
             System.out.println("i is " + j);
         }
 
+        // break statement
+        // print the numbers 1 through 5
+
+        for(int n = 1; n < 100; n++) {
+            System.out.println(n);
+            if (n == 5) {
+                break; // --------------+
+            } //                        |
+        } //                            |
+// <----------------------------+
+
     }
 }
