@@ -2,11 +2,11 @@ public class ControlFlowExercise {
 
     public static void main(String[] args) {
 
-        int i = 5;
-        while (i <= 15) {
-            System.out.println("i: " + i);
-            i++;
-        }
+//        int i = 5;
+//        while (i <= 15) {
+//            System.out.println("i: " + i);
+//            i++;
+//        }
 
 
         int j = 0;
@@ -28,5 +28,19 @@ public class ControlFlowExercise {
             System.out.println("Count: " + l);
             l *= 2;
         } while(l < 1000000);
+
+
+
+        for (int i = 0; i < 100; i++) {
+            if(i % 15 == 0) {
+                System.out.println("Fizz Buzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if(i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }
