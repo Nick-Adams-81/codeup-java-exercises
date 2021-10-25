@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class ConsoleExercises {
 
     public static void main(String[] args) {
+
         double pi = 3.14159;
         System.out.printf("The value of pi is approximately: %s \n", pi);
 
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter a number please: ");
         int userInput = scanner.nextInt();
         System.out.printf("The number you entered was: %s \n",  userInput);
