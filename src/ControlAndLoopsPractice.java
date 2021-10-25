@@ -16,31 +16,45 @@ public class ControlAndLoopsPractice {
 //        }
 
         // switch case
-        int caseSwitch = 1;
-
-        switch (caseSwitch) {
-            case 1:
-                System.out.println("Case 1");
-                // Fall through!
-            case 2:
-                System.out.println("Case 2");
-                break;
-            default:
-                System.out.println("Default case");
-                break;
-        }
+//        int caseSwitch = 1;
+//
+//        switch (caseSwitch) {
+//            case 1:
+//                System.out.println("Case 1");
+//                // Fall through!
+//                break;
+//            case 2:
+//                System.out.println("Case 2");
+//                break;
+//            default:
+//                System.out.println("Default case");
+//                break;
+//        }
 
         // while loop
-        int i = 1;
-        while (i <= 10) {
-            System.out.println("i is " + i);
-            i++;
-        }
+//        int i = 1;
+//        while (i <= 10) {
+//            System.out.println("i is " + i);
+//            i++;
+//        }
+
+
+
+//        boolean isSunny = false;
+//        boolean hasUmbrella = false;
+
+//        if(isSunny) {
+//            System.out.println("Enjoy the sunshine!");
+//        } else if(!isSunny && hasUmbrella) {
+//            System.out.println("You're ready for the rain!");
+//        } else {
+//            System.out.println("Check the weather!");
+//        }
 
         // do loop
-        do {
-            System.out.println("You will see this despite the condition!");
-        } while (false);
+//        do {
+//            System.out.println("You will see this despite the condition!");
+//        } while (false);
 
         // for loop
         for(int j = 0; j < 10; j += 1) {
