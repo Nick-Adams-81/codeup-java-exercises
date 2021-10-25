@@ -11,20 +11,20 @@ public class ControlFlowExercise {
 //        }
 
 
-//        int j = 0;
-//        do {
-//            System.out.println("The count is: " + (j));
-//            j += 2;
-//        } while(j <= 100);
+        int j = 0;
+        do {
+            System.out.println("The count is: " + (j));
+            j += 2;
+        } while(j <= 100);
 
 
-//        int k = 100;
-//        do {
-//            System.out.println("K:" + k);
-//            k -= 5;
-//        } while(k >= 0);
-//
-//
+        int k = 100;
+        do {
+            System.out.println("K:" + k);
+            k -= 5;
+        } while(k >= 0);
+
+
 //        int l = 2;
 //        do {
 //            System.out.println("Count: " + l);
@@ -33,17 +33,17 @@ public class ControlFlowExercise {
 
 
 
-//        for (int i = 0; i < 100; i++) {
-//            if(i % 15 == 0) {
-//                System.out.println("Fizz Buzz");
-//            } else if (i % 3 == 0) {
-//                System.out.println("Fizz");
-//            } else if(i % 5 == 0) {
-//                System.out.println("Buzz");
-//            } else {
-//                System.out.println(i);
-//            }
-//        }
+        for (int i = 0; i < 100; i++) {
+            if(i % 15 == 0) {
+                System.out.println("Fizz Buzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if(i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
 
 
         Scanner scanner = new Scanner(System.in);
@@ -58,6 +58,22 @@ public class ControlFlowExercise {
             //System.out.println(i);
             System.out.println(i + "       |  " + (i * i) + "        |  "+ (i * i * i));
         }
+
+        System.out.print("Enter a numerical grade from 0 to 100 please: ");
+        int input = scanner.nextInt();
+        System.out.println(input);
+        if (input >= 88) {
+            System.out.println("Your grade is an 'A'.");
+        } else if(input >= 80) {
+            System.out.println("Your grade is a 'B'.");
+        } else if(input >= 67) {
+            System.out.print("Your grade is a 'C'.");
+        } else if(input >= 60) {
+            System.out.println("Your grade is a 'D'.");
+        } else {
+            System.out.println("Your grade is an 'F'.");
+        }
+
 
 
     }
