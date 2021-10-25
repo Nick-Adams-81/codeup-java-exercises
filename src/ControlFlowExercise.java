@@ -46,17 +46,17 @@ public class ControlFlowExercise {
 
 
         Scanner scanner = new Scanner(System.in);
-//
 
 
-        boolean userConfirm = true;
+
+        boolean userConfirm;
         do {
             System.out.print("Enter a number please: ");
             int userNum = scanner.nextInt();
             System.out.println(" Here is your table!");
             System.out.println("");
-            System.out.println("number  |  squared  |  cubed ");
-            System.out.println("------- |  -------  |  -----");
+            System.out.println("Number  |  Squared  |  Cubed ");
+            System.out.println("------  |  -------  |  -----");
             for (int z = 1; z <= userNum; z++) {
                 System.out.println(z + "       |  " + (z * z) + "        |  "+ (z * z * z));
             }
@@ -73,7 +73,6 @@ public class ControlFlowExercise {
         do {
             System.out.print("Enter a numerical grade from 0 to 100 please: ");
             int input = scanner.nextInt();
-            System.out.println(input);
             if (input >= 88) {
                 System.out.println("Your grade is an 'A'.");
             } else if (input >= 80) {
@@ -85,12 +84,11 @@ public class ControlFlowExercise {
             } else {
                 System.out.println("Your grade is an 'F'.");
             }
-            System.out.print("Continue? [y/n]");
+            System.out.println("Continue? [y/n]");
             String response2 = scanner.next();
             confirm = response2.equals("y");
 
         } while (confirm);
-
 
 
 
