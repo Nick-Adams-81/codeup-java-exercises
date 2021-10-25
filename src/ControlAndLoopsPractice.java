@@ -15,21 +15,21 @@ public class ControlAndLoopsPractice {
 //            // executes if none of the conditions checked in this block were true
 //        }
 
-        // switch case
-//        int caseSwitch = 1;
-//
-//        switch (caseSwitch) {
-//            case 1:
-//                System.out.println("Case 1");
-//                // Fall through!
-//                break;
-//            case 2:
-//                System.out.println("Case 2");
-//                break;
-//            default:
-//                System.out.println("Default case");
-//                break;
-//        }
+         //switch case
+        int caseSwitch = 1;
+
+        switch (caseSwitch) {
+            case 1:
+                System.out.println("Case 1");
+                // Fall through!
+                break;
+            case 2:
+                System.out.println("Case 2");
+                break;
+            default:
+                System.out.println("Default case");
+                break;
+        }
 
         // while loop
 //        int i = 1;
