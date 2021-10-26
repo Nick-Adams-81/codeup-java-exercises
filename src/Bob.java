@@ -7,9 +7,10 @@ public class Bob {
         // initializing a scanner
         Scanner scanner = new Scanner(System.in);
 
-
         boolean confirm;
         do {
+
+            // asking the user for some input
             System.out.println("Say something...");
             String input = scanner.nextLine();
             System.out.printf("You said %s \n", input);
@@ -25,12 +26,12 @@ public class Bob {
                 System.out.println("Whatever");
             }
 
+            // asking the user if they want to continue or end the program
             System.out.println("Continue? [y/n]");
             String response = scanner.nextLine();
             confirm = response.equalsIgnoreCase("y");
 
         } while(confirm);
-        // asking the user for some input
 
 
     }
