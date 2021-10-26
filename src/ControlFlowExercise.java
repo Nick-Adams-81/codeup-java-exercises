@@ -85,7 +85,7 @@ public class ControlFlowExercise {
 
             System.out.println("Continue? [y/n]");
             String response2 = scanner.next();
-            confirm = response2.equals("y");
+            confirm = response2.equalsIgnoreCase("y");
 
         } while (confirm);
 
