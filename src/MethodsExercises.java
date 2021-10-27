@@ -35,12 +35,11 @@ public class MethodsExercises {
 
 
 
-
-
     public static long factoral(int n) {
         long num = 1;
-        for(int i = 2; i <= n; i++) {
+        for(int i = 1; i <= n; i++) {
             num = num * i;
+            System.out.println(i + "!" + " = " + num);
         }
         return num;
     }
@@ -58,11 +57,32 @@ public class MethodsExercises {
     }
 
 
-    public static int randomInt(int Min, int Max)
-    {
+    public static int randomInt(int Min, int Max) {
         return (int) (Math.random()*(Max-Min))+Min;
     }
 
+
+
+    public static void game() {
+
+        boolean confirm = false;
+        int randomNumber = randomInt(1, 100);
+        while (!confirm) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Pick a number from 1 to 100");
+            int userInput = sc.nextInt();
+
+            if(userInput < randomNumber) {
+                System.out.println("Higher!");
+            } else if(userInput > randomNumber) {
+                System.out.println("Lower!");
+            } else {
+                System.out.println("Good guess!");
+                confirm = true;
+            }
+        }
+
+    }
 
 
     public static void diceRoll() {
@@ -87,12 +107,12 @@ public class MethodsExercises {
             String response = scanner.next();
             confirm = response.equalsIgnoreCase("y");
         }while(confirm);
-
     }
 
     public static void main(String[] args) {
 
-        diceRoll();
+//        diceRoll();
+        game();
 //        userInputFactoral();
 //        System.out.println(addition(4, 5));
 //        System.out.println(subtraction(9, 5));
