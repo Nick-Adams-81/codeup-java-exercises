@@ -27,7 +27,6 @@ public class MethodsExercises {
         System.out.println("Enter a number between 1 and 10:");
         int userNumber = sc.nextInt();
         if(userNumber <= max && userNumber >= min) {
-            System.out.println("Thank you");
             return userNumber;
         } else {
             return getInteger(min, max);
@@ -42,9 +41,7 @@ public class MethodsExercises {
         return num;
     }
 
-
-    public static void main(String[] args) {
-
+    public static void userInputFactoral() {
         Scanner scanner = new Scanner(System.in);
         boolean confirm;
         do{
@@ -54,6 +51,11 @@ public class MethodsExercises {
             confirm = userConfirm.equalsIgnoreCase("y");
         } while(confirm);
 
+    }
+
+    public static void main(String[] args) {
+
+        userInputFactoral();
 //        System.out.println(addition(4, 5));
 //        System.out.println(subtraction(9, 5));
 //        System.out.println(multiplication(3, 5));
