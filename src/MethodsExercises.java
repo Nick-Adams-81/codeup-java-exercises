@@ -69,19 +69,19 @@ public class MethodsExercises {
         Scanner scanner = new Scanner(System.in);
         boolean confirm;
         do{
-            System.out.println("How many dice do you want to roll?");
+            System.out.println("How many sided dice do you want to roll?");
             int res = scanner.nextInt();
-            if(res == 1) {
-                int random = randomInt(1, 6);
-                System.out.println("You rolled a " + random);
-            } else if(res == 2) {
+            if(res == 6) {
                 int random = randomInt(2, 12);
                 System.out.println("You rolled a " + random);
-            } else if(res == 3) {
-                int random = randomInt(3, 18);
+            } else if(res == 8) {
+                int random = randomInt(2, 16);
+                System.out.println("You rolled a " + random);
+            } else if(res == 10) {
+                int random = randomInt(2, 30);
                 System.out.println("You rolled a " + random);
             } else {
-                System.out.println("I dont have that many dice!");
+                System.out.println("I dont have that many sided dice!");
             }
             System.out.println("Roll again? [y/n]");
             String response = scanner.next();
@@ -91,7 +91,6 @@ public class MethodsExercises {
     }
 
     public static void main(String[] args) {
-
 
         diceRoll();
 //        userInputFactoral();
