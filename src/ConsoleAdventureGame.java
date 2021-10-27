@@ -26,11 +26,23 @@ public class ConsoleAdventureGame {
             do{
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("y")) {
-                    System.out.println("Your attack dealt " + heroAttack + " damage, your enemys health is " + (enemyHealth - heroAttack + " however your enemy dealt " + enemyAttack + " damage to you, leaving you with " + (heroHealth - enemyAttack)));
+                    boolean attack;
+                    do{
+                        heroHealth -= enemyAttack;
+                        enemyHealth -= heroAttack;
+                        System.out.println("Your attack dealt " + heroAttack + " damage, your enemys health is " + (enemyHealth   + " however your enemy dealt " + enemyAttack + " damage to you, leaving you with " + (heroHealth)));
+                        System.out.println("Do you wish to continue the attack or run away?? [attack/run]");
+                        String response = scanner.nextLine();
+                        attack = response.equalsIgnoreCase("attack");
+
+                    } while(attack);
+
+
                 }
-                System.out.println("Do you wish to continue the attack or run away?? [attack/run]");
-                String response = scanner.nextLine();
-                confirm = response.equalsIgnoreCase("attack");
+
+                System.out.println("you done? [y/n]");
+                String res2 = scanner.nextLine();
+                confirm = res2.equalsIgnoreCase("n");
 
             }while(confirm);
 
