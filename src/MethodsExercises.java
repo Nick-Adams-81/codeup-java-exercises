@@ -38,7 +38,7 @@ public class MethodsExercises {
     public static long factoral(int n) {
         long num = 1;
         for(int i = 1; i <= n; i++) {
-            num = num * i;
+            num = num * i;;
             System.out.println(i + "!" + " = " + num);
         }
         return num;
@@ -81,7 +81,6 @@ public class MethodsExercises {
                 confirm = true;
             }
         }
-
     }
 
 
@@ -112,8 +111,8 @@ public class MethodsExercises {
     public static void main(String[] args) {
 
 //        diceRoll();
-        game();
-//        userInputFactoral();
+//        game();
+        userInputFactoral();
 //        System.out.println(addition(4, 5));
 //        System.out.println(subtraction(9, 5));
 //        System.out.println(multiplication(3, 5));
@@ -121,5 +120,4 @@ public class MethodsExercises {
 //        System.out.println(remainder(8, 3));
 
     }
-
 }
