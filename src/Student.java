@@ -2,6 +2,7 @@ public class Student {
 
     public String name;
     public String cohort;
+    private double grade;
     public int gradYear;
 
     // adding a constructor
@@ -13,16 +14,26 @@ public class Student {
         this(studentName, "unassigned");
     }
 
+    public double shareGrade() {
+        return grade;
+    }
+
     public Student(String studentName, String StudentCohort) {
         this.name = studentName;
         this.cohort = StudentCohort;
     }
 
     public Student(String studentName, String studentCohort, int graduationYear) {
-        name = studentName;
-        cohort = studentCohort;
-        gradYear = graduationYear;
+        this.name = studentName;
+        this.cohort = studentCohort;
+        this.gradYear = graduationYear;
+    }
 
+    public Student(String studentName, String studentCohort, int graduationYear, double studentGrade) {
+        this.name = studentName;
+        this.cohort = studentCohort;
+        this.gradYear = graduationYear;
+        this.grade = studentGrade;
     }
 
     public static void main(String[] args) {
@@ -41,5 +52,8 @@ public class Student {
 
         Student mike = new Student("Mike", "rome", 2022);
         System.out.println(mike.name + " " + mike.cohort + " " + mike.gradYear);
+
+        Student john = new Student("john", "grecce", 2022, 87.5);
+        System.out.println(john.name + " " + john.cohort + " " + john.gradYear + " " + john.grade);
     }
 }

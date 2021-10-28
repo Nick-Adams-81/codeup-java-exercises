@@ -1,6 +1,6 @@
 
 
-public class Person {
+public class PersonLecture {
 
     // instance variables
     public String firstName;
@@ -18,8 +18,8 @@ public class Person {
 
     public static void main(String[] args) {
 
-        Person nick = new Person();
-        Person ken = new Person();
+        PersonLecture nick = new PersonLecture();
+        PersonLecture ken = new PersonLecture();
         ken.firstName = "Ken";
         ken.lastName = "Howell";
         ken.age = 34;
@@ -34,12 +34,12 @@ public class Person {
         System.out.println(ken.joinChat());
         System.out.println("World pop = " + worldPop);
 
-        Person doug = new Person();
+        PersonLecture doug = new PersonLecture();
         doug.firstName = "Doug";
         doug.lastName = " Hirsh";
 
         // how to add new person to world count
-        Person.worldPop += 1;
+        PersonLecture.worldPop += 1;
         System.out.println("world pop + " + worldPop);
 //        System.out.println(Person.firstName); // compile time error, can't talk to non static property
 
