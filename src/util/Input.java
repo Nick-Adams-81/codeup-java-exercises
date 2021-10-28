@@ -31,7 +31,6 @@ public class Input {
         }
     }
 
-
     public double getDouble(double min, double max) {
         System.out.println("Enter a number between 1 and 100");
         double userNumber = scanner.nextDouble();
