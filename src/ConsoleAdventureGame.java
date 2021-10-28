@@ -23,7 +23,7 @@ public class ConsoleAdventureGame {
             String name = scanner.nextLine();
             System.out.println("Hello " + name + ", nice to meet you!");
 
-            System.out.println("Your health is " + heroHealth + ", the enemy has " + enemyHealth + " health left, do you wish to attack?[y/n]");
+            System.out.println("Your health points are: " + heroHealth + ", the enemy has: " + enemyHealth + " health points, do you wish to attack?[y/n]");
 
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("y")) {
@@ -50,10 +50,11 @@ public class ConsoleAdventureGame {
                             if(potions > 0 ) {
                                 heroHealth += 10;
                                 potions -= 1;
+                                System.out.println("You took the potion, your health is now " + (heroHealth) + ", you have " + potions + " potions left");
                             } else if(potions == 0) {
-                                System.out.println("You have no more potions!");
+                                System.out.println("You have no more potions left! No health will be added!");
                             }
-                            System.out.println("You took the potion, your health is now " + (heroHealth) + ", you have " + potions + " potions left");
+
                         }
 
                         attack = response.equalsIgnoreCase("attack") || response.equalsIgnoreCase("potion");
