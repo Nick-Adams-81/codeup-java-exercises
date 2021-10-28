@@ -31,13 +31,13 @@ public class ConsoleAdventureGame {
                     int potions = 2;
                     do{
                         int heroAttack = randomInt(5,  50);
-                        int enemyAttack = randomInt(15, 30);
+                        int enemyAttack = randomInt(15, 40);
 
                         heroHealth -= enemyAttack;
                         enemyHealth -= heroAttack;
                         System.out.println(name + ", Your attack dealt " + heroAttack + " damage, your enemys health is " + (enemyHealth   + " however your enemy dealt " + enemyAttack + " damage to you, leaving you with " + (heroHealth)));
                         if(enemyHealth <= 0) {
-                            System.out.println(name + ", You killed the enemy!");
+                            System.out.println(name + ", You killed the enemy! You win!");
                             break;
                         } else if(heroHealth <= 0) {
                             System.out.println(name + "You died! Game over!");
@@ -47,15 +47,18 @@ public class ConsoleAdventureGame {
                         System.out.println(name + ", Do you wish to continue the attack, take a potion, or run away?? [attack/potion/run]");
                         String response = scanner.nextLine();
                         if(response.equalsIgnoreCase("potion")) {
-                            heroHealth += 10;
-                            potions -= 1;
+                            if(potions > 0 ) {
+                                heroHealth += 10;
+                                potions -= 1;
+                            } else if(potions == 0) {
+                                System.out.println("You have no more potions!");
+                            }
                             System.out.println("You took the potion, your health is now " + (heroHealth) + ", you have " + potions + " potions left");
                         }
 
                         attack = response.equalsIgnoreCase("attack") || response.equalsIgnoreCase("potion");
 
                     } while(attack);
-
 
                 }
 
