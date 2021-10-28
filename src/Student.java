@@ -1,20 +1,29 @@
 public class Student {
 
-
     public String name;
     public String cohort;
+    public int gradYear;
 
     // adding a constructor
     public Student(String studentName) {
-        name = studentName;
-        cohort = "Unnasigned";
+//        name = studentName;
+//        cohort = "Unassigned";
+
+        // calling constructor inside a constructor
+        this(studentName, "unassigned");
     }
 
     public Student(String studentName, String StudentCohort) {
-        name = studentName;
-        cohort = StudentCohort;
+        this.name = studentName;
+        this.cohort = StudentCohort;
     }
 
+    public Student(String studentName, String studentCohort, int graduationYear) {
+        name = studentName;
+        cohort = studentCohort;
+        gradYear = graduationYear;
+
+    }
 
     public static void main(String[] args) {
         // before constructors:
@@ -29,5 +38,8 @@ public class Student {
 
         Student ken = new Student("ken", "deimos");
         System.out.println(ken.name + " " + ken.cohort);
+
+        Student mike = new Student("Mike", "rome", 2022);
+        System.out.println(mike.name + " " + mike.cohort + " " + mike.gradYear);
     }
 }
