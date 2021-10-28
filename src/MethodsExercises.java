@@ -62,7 +62,6 @@ public class MethodsExercises {
     }
 
 
-
     public static void game() {
 
         boolean confirm = false;
@@ -108,16 +107,22 @@ public class MethodsExercises {
         }while(confirm);
     }
 
+
+
+
     public static void main(String[] args) {
+
 
 //        diceRoll();
 //        game();
-        userInputFactoral();
+//        userInputFactoral();
 //        System.out.println(addition(4, 5));
 //        System.out.println(subtraction(9, 5));
 //        System.out.println(multiplication(3, 5));
 //        System.out.println(division(10, 3));
 //        System.out.println(remainder(8, 3));
+
+
 
     }
 }
