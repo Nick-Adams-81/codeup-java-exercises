@@ -10,5 +10,7 @@ public class InputTest {
         input.yesNo();
         input.getInt(1, 10);
         input.getDouble(1, 100);
+        input.getString();
+
     }
 }
