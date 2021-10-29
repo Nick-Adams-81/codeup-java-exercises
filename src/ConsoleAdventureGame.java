@@ -83,8 +83,6 @@ public class ConsoleAdventureGame {
         System.out.println(name + ", You made it past level 1, in your last fight you gained valuable experience and your health and attack have increased by 25%, \n you travel through a deep dark forest and encounter a tougher enemy! Your enemy challenges you to fight! Do you accept the challenge?[y/n]");
 
         boolean confirm;
-
-
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("y")) {
             int newHeroHealth = 125;
@@ -124,6 +122,11 @@ public class ConsoleAdventureGame {
         }
     }
 
+
+    public static void bossFight() {
+        System.out.println("just a test of the boss function");
+    }
+
     public static void main(String[] args) {
 
         // initializing a scanner to capture user input
@@ -138,6 +141,9 @@ public class ConsoleAdventureGame {
             int heroHealth = 100;
             int enemyHealth = 80;
 
+            // level 2 hero and enemy health
+            int newHeroHealth = 125;
+            int newEnemyHealth = 100;
             // asking the user for their name
             System.out.println("Tell me your name");
             String name = scanner.nextLine();
@@ -145,8 +151,8 @@ public class ConsoleAdventureGame {
 
             // calling the void level methods
             levelOne(name, heroHealth, enemyHealth);
-            levelTwo(name, heroHealth, enemyHealth);
-
+            levelTwo(name, newHeroHealth, newEnemyHealth);
+            bossFight();
             // run this code if the user says no to playing the game
         } else {
             System.out.println("ok, maybe next time!");
