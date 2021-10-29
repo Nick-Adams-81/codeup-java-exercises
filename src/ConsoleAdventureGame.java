@@ -3,13 +3,10 @@ import java.util.Scanner;
 public class ConsoleAdventureGame {
 
 
-
-
     // function generating a random number in a given range
     public static int randomInt(int Min, int Max) {
-        return (int) (Math.random()*(Max-Min))+Min;
+        return (int) (Math.random() * (Max - Min)) + Min;
     }
-
 
 
     public static void levelOne(String name, int heroHealth, int enemyHealth) {
@@ -28,24 +25,24 @@ public class ConsoleAdventureGame {
             int potions = 2;
 
             // running the game code in a do while loop
-            do{
+            do {
 
                 // using randomInt function to generate random hit points for hero and enemy when the user attacks
-                int heroAttack = randomInt(5,  50);
+                int heroAttack = randomInt(5, 50);
                 int enemyAttack = randomInt(15, 40);
 
                 // adjusting the health points of hero and enemy after the attack happens
                 heroHealth -= enemyAttack;
                 enemyHealth -= heroAttack;
-                System.out.println(name + ", Your attack dealt " + heroAttack + " damage, your enemys health is " + (enemyHealth   + " however your enemy dealt " + enemyAttack + " damage to you, leaving you with " + (heroHealth)));
+                System.out.println(name + ", Your attack dealt " + heroAttack + " damage, your enemys health is " + (enemyHealth + " however your enemy dealt " + enemyAttack + " damage to you, leaving you with " + (heroHealth)));
 
                 // setting up the end of the gaem(when the enemy dies)
-                if(enemyHealth <= 0) {
+                if (enemyHealth <= 0) {
                     System.out.println(name + ", You killed the enemy! You win!");
                     break;
                     // setting up the end of the game(when the hero dies)
-                } else if(heroHealth <= 0) {
-                    System.out.println(name + "You died! Game over!");
+                } else if (heroHealth <= 0) {
+                    System.out.println(name + " You died! Game over!");
                     break;
                 }
 
@@ -54,24 +51,24 @@ public class ConsoleAdventureGame {
                 String response = scanner.nextLine();
 
                 // run this code if the user inputs potion
-                if(response.equalsIgnoreCase("potion")) {
-                    if(potions > 0 ) {
+                if (response.equalsIgnoreCase("potion")) {
+                    if (potions > 0) {
                         heroHealth += 10;
                         potions -= 1;
                         System.out.println("You took the potion, your health is now " + (heroHealth) + ", you have " + potions + " potions left");
-                    } else if(potions == 0) {
+                    } else if (potions == 0) {
                         System.out.println("You have no more potions left! No health will be added!");
                     }
 
                     // run this code when the user inputs run after the attack
-                } else if(response.equalsIgnoreCase("run")) {
+                } else if (response.equalsIgnoreCase("run")) {
                     System.out.println(name + ", You are a huge coward!!!!");
                 }
 
                 // run this code if the user inputs attack OR potion
                 attack = response.equalsIgnoreCase("attack") || response.equalsIgnoreCase("potion");
 
-            } while(attack);
+            } while (attack);
 
             // run this if the user says n to attacking the enemy
         } else {
@@ -80,37 +77,53 @@ public class ConsoleAdventureGame {
 
     }
 
+
     public static void levelTwo(String name, int heroHealth, int enemyHealth) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(name + "You made it past level 1, in your last fight you gained valuable experience and your health and attack have increased by 25%, \n you travel through a deep dark forest and encounter a tougher enemy! Your enemy challenges you to fight! Do you accept the challenge?[y/n]");
+        System.out.println(name + ", You made it past level 1, in your last fight you gained valuable experience and your health and attack have increased by 25%, \n you travel through a deep dark forest and encounter a tougher enemy! Your enemy challenges you to fight! Do you accept the challenge?[y/n]");
 
         boolean confirm;
-        do{
-            String response = scanner.nextLine();
-           if(response.equalsIgnoreCase("y")) {
-               int potions = 3;
-               // using randomInt function to generate random hit points for hero and enemy when the user attacks
-               int heroAttack = randomInt(7,  60);
-               int enemyAttack = randomInt(20, 50);
-               // re setting hero and enemy health
-               heroHealth = 125;
-               enemyHealth = 110;
-               System.out.println(name + "Your health is now: " + heroHealth + ", and you now have " + potions + " potions, however your new enemy is much tougher, there health is: " + enemyHealth +".");
-               System.out.println("");
-               System.out.println("you attack! your attack dealt " + heroAttack + " damage to your enemy leaving him with " + (enemyHealth - heroAttack) + ", but his counter attack dealt " + enemyAttack + ", left you with " + (heroHealth - enemyAttack));
-
-           }
-
-           System.out.println("Do you want to continue the attack, take a potion then attack, or run like a coward?[attack/potion/run]");
-          String res = scanner.nextLine();
-          confirm = res.equalsIgnoreCase("attack") || res.equalsIgnoreCase("potion");
 
 
-        } while(confirm);
+        String response = scanner.nextLine();
+        if (response.equalsIgnoreCase("y")) {
+            int newHeroHealth = 125;
+            int newEnemyHealth = 110;
+            int potions = 3;
+            System.out.println(name + ", Your health is now: " + newHeroHealth + ", and you now have " + potions + " potions, however your new enemy is much tougher, there health is: " + newEnemyHealth + ".");
+            do {
+                // using randomInt function to generate random hit points for hero and enemy when the user attacks
+                int heroAttack = randomInt(7, 60);
+                int enemyAttack = randomInt(20, 50);
+                // re setting hero and enemy health
 
+                System.out.println("");
+                newHeroHealth -= enemyAttack;
+                newEnemyHealth -= heroAttack;
+                System.out.println("you attack! your attack dealt " + heroAttack + " damage to your enemy leaving him with " + newEnemyHealth + ", but his counter attack dealt " + enemyAttack + ", left you with " + newHeroHealth);
+                if (newEnemyHealth <= 0) {
+                    System.out.println("You defeated your enemy!");
+                    break;
+                } else if (newHeroHealth <= 0) {
+                    System.out.println("You died, game over");
+                    break;
+                }
+                System.out.println("Do you want to continue the attack, take a potion then attack, or run like a coward?[attack/potion/run]");
+                String res = scanner.nextLine();
+                if (res.equalsIgnoreCase("potion")) {
+                    newHeroHealth += 20;
+                    potions -= 1;
+                    System.out.println("You took a potion, your health is now " + newHeroHealth + ", you have " + potions + " potions left");
+                } else if (res.equalsIgnoreCase("run")) {
+                    System.out.println(name + ", Run away you coward!!!");
+                }
+                confirm = res.equalsIgnoreCase("attack") || res.equalsIgnoreCase("potion");
 
+            }while (confirm);
 
+        }
     }
+
     public static void main(String[] args) {
 
         // initializing a scanner to capture user input
@@ -119,7 +132,7 @@ public class ConsoleAdventureGame {
         // asking the user if they are ready to start the game
         System.out.println("Are you ready to start the game?[y/n]");
         String res = scanner.nextLine();
-        if(res.equalsIgnoreCase("y")) {
+        if (res.equalsIgnoreCase("y")) {
 
             // setting up the hero and enemy health
             int heroHealth = 100;
@@ -134,7 +147,7 @@ public class ConsoleAdventureGame {
             levelOne(name, heroHealth, enemyHealth);
             levelTwo(name, heroHealth, enemyHealth);
 
-                // run this code if the user says no to playing the game
+            // run this code if the user says no to playing the game
         } else {
             System.out.println("ok, maybe next time!");
         }
