@@ -82,21 +82,28 @@ public class ConsoleAdventureGame {
 
     public static void levelTwo(String name, int heroHealth, int enemyHealth) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("You made it past level 1, in your last fight you gained valuable experience and your health and attack have increased by 25%, \n you travel through a deep dark forest and encounter a tougher enemy! Your enemy challenges you to fight! Do you accept the challenge?[y/n]");
+        System.out.println(name + "You made it past level 1, in your last fight you gained valuable experience and your health and attack have increased by 25%, \n you travel through a deep dark forest and encounter a tougher enemy! Your enemy challenges you to fight! Do you accept the challenge?[y/n]");
 
         boolean confirm;
         do{
             String response = scanner.nextLine();
-            confirm = response.equalsIgnoreCase("y");
-            int potions = 3;
-            // using randomInt function to generate random hit points for hero and enemy when the user attacks
-            int heroAttack = randomInt(7,  60);
-            int enemyAttack = randomInt(20, 50);
-            // re setting hero and enemy health
-            heroHealth = 125;
-            enemyHealth = 110;
-            System.out.println("Your health is now: " + heroHealth + ", and you now have " + potions + " potions, however your new enemy is much tougher, there health is: " + enemyHealth +".");
+           if(response.equalsIgnoreCase("y")) {
+               int potions = 3;
+               // using randomInt function to generate random hit points for hero and enemy when the user attacks
+               int heroAttack = randomInt(7,  60);
+               int enemyAttack = randomInt(20, 50);
+               // re setting hero and enemy health
+               heroHealth = 125;
+               enemyHealth = 110;
+               System.out.println(name + "Your health is now: " + heroHealth + ", and you now have " + potions + " potions, however your new enemy is much tougher, there health is: " + enemyHealth +".");
+               System.out.println("");
+               System.out.println("you attack! your attack dealt " + heroAttack + " damage to your enemy leaving him with " + (enemyHealth - heroAttack) + ", but his counter attack dealt " + enemyAttack + ", left you with " + (heroHealth - enemyAttack));
 
+           }
+
+           System.out.println("Do you want to continue the attack, take a potion then attack, or run like a coward?[attack/potion/run]");
+          String res = scanner.nextLine();
+          confirm = res.equalsIgnoreCase("attack") || res.equalsIgnoreCase("potion");
 
 
         } while(confirm);
@@ -123,6 +130,7 @@ public class ConsoleAdventureGame {
             String name = scanner.nextLine();
             System.out.println("Hello " + name + ", nice to meet you!");
 
+            // calling the void level methods
             levelOne(name, heroHealth, enemyHealth);
             levelTwo(name, heroHealth, enemyHealth);
 
