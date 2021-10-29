@@ -8,7 +8,7 @@ public class ConsoleAdventureGame {
         return (int) (Math.random() * (Max - Min)) + Min;
     }
 
-
+    // level one method
     public static void levelOne(String name, int heroHealth, int enemyHealth) {
 
         Scanner scanner = new Scanner(System.in);
@@ -78,6 +78,7 @@ public class ConsoleAdventureGame {
     }
 
 
+    // level 2 method
     public static void levelTwo(String name, int heroHealth, int enemyHealth) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(name + ", You made it past level 1, in your last fight you gained valuable experience and your health and attack have increased by 25%, \n you travel through a deep dark forest and encounter a tougher enemy! Your enemy challenges you to fight! Do you accept the challenge?[y/n]");
@@ -86,7 +87,7 @@ public class ConsoleAdventureGame {
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("y")) {
             int newHeroHealth = 125;
-            int newEnemyHealth = 110;
+            int newEnemyHealth = 115;
             int potions = 3;
             System.out.println(name + ", Your health is now: " + newHeroHealth + ", and you now have " + potions + " potions, however your new enemy is much tougher, there health is: " + newEnemyHealth + ".");
             do {
@@ -109,9 +110,14 @@ public class ConsoleAdventureGame {
                 System.out.println("Do you want to continue the attack, take a potion then attack, or run like a coward?[attack/potion/run]");
                 String res = scanner.nextLine();
                 if (res.equalsIgnoreCase("potion")) {
-                    newHeroHealth += 20;
-                    potions -= 1;
-                    System.out.println("You took a potion, your health is now " + newHeroHealth + ", you have " + potions + " potions left");
+                    if(potions > 0) {
+                        newHeroHealth += 20;
+                        potions -= 1;
+                        System.out.println("You took a potion, your health is now " + newHeroHealth + ", you have " + potions + " potions left");
+                    } else if(potions == 0) {
+                        System.out.println("You have no potions left! No health will be added!");
+                    }
+
                 } else if (res.equalsIgnoreCase("run")) {
                     System.out.println(name + ", Run away you coward!!!");
                 }
