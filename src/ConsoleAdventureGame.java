@@ -129,8 +129,27 @@ public class ConsoleAdventureGame {
     }
 
 
-    public static void bossFight() {
-        System.out.println("just a test of the boss function");
+    public static void bossFight(String name, int heroHealth, int enemyHealth) {
+
+        int heroHealth2 = 200;
+        int enemyHealth2 = 250;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("You made it past another enemy, the forrest starts to clear, you are finally home free, or so you think,\n just as the forest clears and you see the sun, a huge monster blocks your path! Do you run back to the dark woods, or do you fight?[run/fight]");
+        String response = scanner.nextLine();
+        if(response.equalsIgnoreCase("fight")) {
+            System.out.println(name + ", You have gained much experience, your health is now: " + heroHealth2 + ", but your enemy is powerful, his health is: " + enemyHealth2);
+            System.out.println("");
+            boolean confirm;
+            do {
+
+                System.out.println("Continue?[y/n]");
+                String response2 = scanner.nextLine();
+                confirm = response2.equalsIgnoreCase("y");
+            } while(confirm);
+        } else {
+            System.out.println(name + "I don't blame you for running, good luck back in the forest, you will need it to survive");
+        }
     }
 
     public static void main(String[] args) {
@@ -158,7 +177,7 @@ public class ConsoleAdventureGame {
             // calling the void level methods
             levelOne(name, heroHealth, enemyHealth);
             levelTwo(name, newHeroHealth, newEnemyHealth);
-            bossFight();
+            bossFight(name, heroHealth, enemyHealth);
             // run this code if the user says no to playing the game
         } else {
             System.out.println("ok, maybe next time!");
