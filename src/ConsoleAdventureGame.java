@@ -39,7 +39,8 @@ public class ConsoleAdventureGame {
 
                 // setting up the end of the gaem(when the enemy dies)
                 if (enemyHealth <= 0) {
-                    System.out.println(name + ", You defetaed the enemy! You continue on your quest");
+                    System.out.println(name + ", You defeated the enemy! You continue on your quest");
+                    System.out.println("");
                     break;
                     // setting up the end of the game(when the hero dies)
                 } else if (heroHealth <= 0) {
@@ -57,6 +58,7 @@ public class ConsoleAdventureGame {
                         heroHealth += 10;
                         potions -= 1;
                         System.out.println("You took the potion, your health is now " + (heroHealth) + ", you have " + potions + " potions left");
+                        System.out.println("");
                     } else if (potions == 0) {
                         System.out.println("You have no more potions left! No health will be added!");
                     }
@@ -103,6 +105,7 @@ public class ConsoleAdventureGame {
                 System.out.println("you attack! your attack dealt " + heroAttack + " damage to your enemy leaving him with " + newEnemyHealth + ", but his counter attack dealt " + enemyAttack + ", left you with " + newHeroHealth);
                 if (newEnemyHealth <= 0) {
                     System.out.println("You defeated your enemy!");
+                    System.out.println("");
                     break;
                 } else if (newHeroHealth <= 0) {
                     System.out.println("You died, game over");
@@ -148,8 +151,8 @@ public class ConsoleAdventureGame {
                 boolean confirm;
                 do {
 
-                    int heroAttack = randomInt(7, 60);
-                    int enemyAttack = randomInt(20, 50);
+                    int heroAttack = randomInt(10, 80);
+                    int enemyAttack = randomInt(30, 60);
 
                     heroHealth2 -= enemyAttack;
                     enemyHealth2 -= heroAttack;
@@ -161,11 +164,12 @@ public class ConsoleAdventureGame {
                         System.out.println("You have perished on your quest, a brave effort but all for naught...");
                         break;
                     }
+
                     System.out.println("Continue the fight, take a potion and continue the fight, or run away?[fight/potion/run]");
                     String response2 = scanner.nextLine();
                     if(response2.equalsIgnoreCase("potion")) {
                         if(potions > 0) {
-                            heroHealth2 += 30;
+                            heroHealth2 += 45;
                             potions -= 1;
                             System.out.println("You took a potion, your health is now " + heroHealth2 + ", you have " + potions + " potion left");
                         } else if(potions == 0) {
@@ -173,7 +177,7 @@ public class ConsoleAdventureGame {
                         }
 
                     } else if(response2.equalsIgnoreCase("run")) {
-                        System.out.println(name + "I dont blame you for running, the monster is powerful");
+                        System.out.println(name + " I dont blame you for running, the monster is powerful");
                         break;
                     }
                     confirm = response2.equalsIgnoreCase("fight") || response2.equalsIgnoreCase("potion");
