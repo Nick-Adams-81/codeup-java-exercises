@@ -41,6 +41,7 @@ public class ConsoleAdventureGame {
                 if (enemyHealth <= 0) {
                     System.out.println(name + ", You defeated the enemy! You continue on your quest");
                     System.out.println("");
+                    monsterFight();
                     break;
                     // setting up the end of the game(when the hero dies)
                 } else if (heroHealth <= 0) {
@@ -106,6 +107,7 @@ public class ConsoleAdventureGame {
                 if (newEnemyHealth <= 0) {
                     System.out.println("You defeated your enemy!");
                     System.out.println("");
+                    monsterFight();
                     break;
                 } else if (newHeroHealth <= 0) {
                     System.out.println("You died, game over");
@@ -135,11 +137,11 @@ public class ConsoleAdventureGame {
     }
 
 
-    public static void bossFight(String name, int heroHealth, int enemyHealth) {
+    public static void bossFight(String name, int heroHealth2, int enemyHealth2) {
 
         // setting up boss fight hero and boss health
-        int heroHealth2 = 200;
-        int enemyHealth2 = 250;
+        int heroHealth = 200;
+        int enemyHealth = 250;
 
         // setting up a scanner for user input in boss fight
         Scanner scanner = new Scanner(System.in);
@@ -152,7 +154,7 @@ public class ConsoleAdventureGame {
             int potions = 2;
 
             // asking the user one more time if they want to fight the boss
-            System.out.println(name + ", You have gained much experience, your health is now: " + heroHealth2 + ", but you only have " + potions + " potions, but your enemy is powerful, his health is: " + enemyHealth2 + ", \n do you want to fight him?[y/n]");
+            System.out.println(name + ", You have gained much experience, your health is now: " + heroHealth + ", but you only have " + potions + " potions, but your enemy is powerful, his health is: " + enemyHealth + ", \n do you want to fight him?[y/n]");
 
             // saving the user response
             String response3 = scanner.nextLine();
@@ -168,18 +170,19 @@ public class ConsoleAdventureGame {
                     int enemyAttack = randomInt(30, 60);
 
                     // adjusting the hero and enemy health after an attack
-                    heroHealth2 -= enemyAttack;
-                    enemyHealth2 -= heroAttack;
-                    System.out.println("You attack! your attack deals " + heroAttack + " damage, leaving the monster with " + enemyHealth2 + ", but the monster dealt " + enemyAttack + " damage,\n leaving you with " + heroHealth2 + " health");
+                    heroHealth -= enemyAttack;
+                    enemyHealth -= heroAttack;
+                    System.out.println("You attack! your attack deals " + heroAttack + " damage, leaving the monster with " + enemyHealth + ", but the monster dealt " + enemyAttack + " damage,\n leaving you with " + heroHealth + " health");
 
                     // run this if the enemys health is 0 or less
-                    if (enemyHealth2 <= 0) {
+                    if (enemyHealth <= 0) {
                         System.out.println("You have defeated the monster!!!!");
+                        monsterFight();
                         epilouge(name);
                         break;
 
                         // run this if the heros health is 0 or less
-                    } else if (heroHealth2 <= 0) {
+                    } else if (heroHealth <= 0) {
                         System.out.println("You have perished on your quest, a brave effort but all for naught...");
                         break;
                     }
@@ -191,9 +194,9 @@ public class ConsoleAdventureGame {
                     // run this if the user input is potion
                     if (response2.equalsIgnoreCase("potion")) {
                         if (potions > 0) {
-                            heroHealth2 += 45;
+                            heroHealth += 50;
                             potions -= 1;
-                            System.out.println("You took a potion, your health is now " + heroHealth2 + ", you have " + potions + " potion left");
+                            System.out.println("You took a potion, your health is now " + heroHealth + ", you have " + potions + " potion left");
 
                             // run this if the user has no more potions
                         } else if (potions == 0) {
@@ -216,8 +219,18 @@ public class ConsoleAdventureGame {
 
     }
 
+
+
     public static void epilouge(String name) {
         System.out.println(name + ", You have survived your journey, you are a powerful warrior, congratulations!");
+
+    }
+
+    public static void monsterFight() {
+        System.out.println("  O              O   ");
+        System.out.println("--|-- |----     /  \\  ");
+        System.out.println("  |           --|__|--    ");
+        System.out.println(" / \\            /  \\    ");
     }
 
 
@@ -251,6 +264,7 @@ public class ConsoleAdventureGame {
                 levelOne(name, heroHealth, enemyHealth);
                 levelTwo(name, newHeroHealth, newEnemyHealth);
                 bossFight(name, heroHealth, enemyHealth);
+
 
                 // asking the user if they want to play again
                 System.out.println("Play again?[y/n]");
