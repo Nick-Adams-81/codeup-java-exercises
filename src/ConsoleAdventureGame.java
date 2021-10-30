@@ -12,6 +12,7 @@ public class ConsoleAdventureGame {
     public static void levelOne(String name, int heroHealth, int enemyHealth) {
 
         Scanner scanner = new Scanner(System.in);
+        System.out.println("You start you adventure, early on your path you encounter your first enemy!");
         System.out.println("Your health points are: " + heroHealth + ", the enemy has: " + enemyHealth + " health points, do you wish to attack?[y/n]");
 
         // if the user says yes to attack run this code
@@ -38,7 +39,7 @@ public class ConsoleAdventureGame {
 
                 // setting up the end of the gaem(when the enemy dies)
                 if (enemyHealth <= 0) {
-                    System.out.println(name + ", You killed the enemy! You win!");
+                    System.out.println(name + ", You defetaed the enemy! You continue on your quest");
                     break;
                     // setting up the end of the game(when the hero dies)
                 } else if (heroHealth <= 0) {
@@ -110,11 +111,11 @@ public class ConsoleAdventureGame {
                 System.out.println("Do you want to continue the attack, take a potion then attack, or run like a coward?[attack/potion/run]");
                 String res = scanner.nextLine();
                 if (res.equalsIgnoreCase("potion")) {
-                    if(potions > 0) {
+                    if (potions > 0) {
                         newHeroHealth += 20;
                         potions -= 1;
                         System.out.println("You took a potion, your health is now " + newHeroHealth + ", you have " + potions + " potions left");
-                    } else if(potions == 0) {
+                    } else if (potions == 0) {
                         System.out.println("You have no potions left! No health will be added!");
                     }
 
@@ -123,7 +124,7 @@ public class ConsoleAdventureGame {
                 }
                 confirm = res.equalsIgnoreCase("attack") || res.equalsIgnoreCase("potion");
 
-            }while (confirm);
+            } while (confirm);
 
         }
     }
@@ -134,22 +135,54 @@ public class ConsoleAdventureGame {
         int heroHealth2 = 200;
         int enemyHealth2 = 250;
 
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("You made it past another enemy, the forrest starts to clear, you are finally home free, or so you think,\n just as the forest clears and you see the sun, a huge monster blocks your path! Do you run back to the dark woods, or do you fight?[run/fight]");
         String response = scanner.nextLine();
-        if(response.equalsIgnoreCase("fight")) {
-            System.out.println(name + ", You have gained much experience, your health is now: " + heroHealth2 + ", but your enemy is powerful, his health is: " + enemyHealth2);
-            System.out.println("");
-            boolean confirm;
-            do {
+        if (response.equalsIgnoreCase("fight")) {
+            int potions = 2;
+            System.out.println(name + ", You have gained much experience, your health is now: " + heroHealth2 + ", but you only have " + potions + " potions, but your enemy is powerful, his health is: " + enemyHealth2 + ", \n do you want to fight him?[y/n]");
+            String response3 = scanner.nextLine();
+            if (response3.equalsIgnoreCase("y")) {
+                System.out.println("");
+                boolean confirm;
+                do {
 
-                System.out.println("Continue?[y/n]");
-                String response2 = scanner.nextLine();
-                confirm = response2.equalsIgnoreCase("y");
-            } while(confirm);
-        } else {
-            System.out.println(name + "I don't blame you for running, good luck back in the forest, you will need it to survive");
+                    int heroAttack = randomInt(7, 60);
+                    int enemyAttack = randomInt(20, 50);
+
+                    heroHealth2 -= enemyAttack;
+                    enemyHealth2 -= heroAttack;
+                    System.out.println("You attack! your attack deals " + heroAttack + " damage, leaving the monster with " + enemyHealth2 + ", but the monster dealt " + enemyAttack + " damage,\n leaving you with " + heroHealth2 + " health");
+                    if(enemyHealth2 <= 0) {
+                        System.out.println("You have defeated the monster!!!!");
+                        break;
+                    } else if(heroHealth2 <= 0) {
+                        System.out.println("You have perished on your quest, a brave effort but all for naught...");
+                        break;
+                    }
+                    System.out.println("Continue the fight, take a potion and continue the fight, or run away?[fight/potion/run]");
+                    String response2 = scanner.nextLine();
+                    if(response2.equalsIgnoreCase("potion")) {
+                        if(potions > 0) {
+                            heroHealth2 += 30;
+                            potions -= 1;
+                            System.out.println("You took a potion, your health is now " + heroHealth2 + ", you have " + potions + " potion left");
+                        } else if(potions == 0) {
+                            System.out.println("You have no more potions left, no health will be added!");
+                        }
+
+                    } else if(response2.equalsIgnoreCase("run")) {
+                        System.out.println(name + "I dont blame you for running, the monster is powerful");
+                        break;
+                    }
+                    confirm = response2.equalsIgnoreCase("fight") || response2.equalsIgnoreCase("potion");
+                } while (confirm);
+            } else {
+                System.out.println(name + "I don't blame you for running, good luck back in the forest, you will need it to survive");
+            }
         }
+
     }
 
     public static void main(String[] args) {
