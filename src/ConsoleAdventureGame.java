@@ -157,26 +157,27 @@ public class ConsoleAdventureGame {
                     heroHealth2 -= enemyAttack;
                     enemyHealth2 -= heroAttack;
                     System.out.println("You attack! your attack deals " + heroAttack + " damage, leaving the monster with " + enemyHealth2 + ", but the monster dealt " + enemyAttack + " damage,\n leaving you with " + heroHealth2 + " health");
-                    if(enemyHealth2 <= 0) {
+                    if (enemyHealth2 <= 0) {
                         System.out.println("You have defeated the monster!!!!");
+                        epilouge(name);
                         break;
-                    } else if(heroHealth2 <= 0) {
+                    } else if (heroHealth2 <= 0) {
                         System.out.println("You have perished on your quest, a brave effort but all for naught...");
                         break;
                     }
 
                     System.out.println("Continue the fight, take a potion and continue the fight, or run away?[fight/potion/run]");
                     String response2 = scanner.nextLine();
-                    if(response2.equalsIgnoreCase("potion")) {
-                        if(potions > 0) {
+                    if (response2.equalsIgnoreCase("potion")) {
+                        if (potions > 0) {
                             heroHealth2 += 45;
                             potions -= 1;
                             System.out.println("You took a potion, your health is now " + heroHealth2 + ", you have " + potions + " potion left");
-                        } else if(potions == 0) {
+                        } else if (potions == 0) {
                             System.out.println("You have no more potions left, no health will be added!");
                         }
 
-                    } else if(response2.equalsIgnoreCase("run")) {
+                    } else if (response2.equalsIgnoreCase("run")) {
                         System.out.println(name + " I dont blame you for running, the monster is powerful");
                         break;
                     }
@@ -189,7 +190,16 @@ public class ConsoleAdventureGame {
 
     }
 
+
+    public static void epilouge(String name) {
+        System.out.println(name + ", You have survived your journey, you are a powerful warrior, congratulations!");
+    }
+
     public static void main(String[] args) {
+
+
+        boolean confirmation;
+
 
         // initializing a scanner to capture user input
         Scanner scanner = new Scanner(System.in);
@@ -199,26 +209,35 @@ public class ConsoleAdventureGame {
         String res = scanner.nextLine();
         if (res.equalsIgnoreCase("y")) {
 
-            // setting up the hero and enemy health
-            int heroHealth = 100;
-            int enemyHealth = 80;
+            do {
+                // setting up the hero and enemy health
+                int heroHealth = 100;
+                int enemyHealth = 80;
 
-            // level 2 hero and enemy health
-            int newHeroHealth = 125;
-            int newEnemyHealth = 100;
-            // asking the user for their name
-            System.out.println("Tell me your name");
-            String name = scanner.nextLine();
-            System.out.println("Hello " + name + ", nice to meet you!");
+                // level 2 hero and enemy health
+                int newHeroHealth = 125;
+                int newEnemyHealth = 100;
+                // asking the user for their name
+                System.out.println("Tell me your name");
+                String name = scanner.nextLine();
+                System.out.println("Hello " + name + ", nice to meet you!");
 
-            // calling the void level methods
-            levelOne(name, heroHealth, enemyHealth);
-            levelTwo(name, newHeroHealth, newEnemyHealth);
-            bossFight(name, heroHealth, enemyHealth);
+                // calling the void level methods
+                levelOne(name, heroHealth, enemyHealth);
+                levelTwo(name, newHeroHealth, newEnemyHealth);
+                bossFight(name, heroHealth, enemyHealth);
+
+                // asking the user if they want to play again
+                System.out.println("Play again?[y/n]");
+                String response = scanner.nextLine();
+                confirmation = response.equalsIgnoreCase("y");
+
+            } while (confirmation);
             // run this code if the user says no to playing the game
         } else {
             System.out.println("ok, maybe next time!");
         }
+
 
     }
 }
