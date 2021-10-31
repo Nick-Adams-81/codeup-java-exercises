@@ -19,6 +19,10 @@ public class ArrayPractice {
         names[3] = "ryan";
 
         System.out.println(Arrays.toString(names));
+
+        for(int i = 0; i < names.length; i++) {
+            System.out.println(names[i]);
+        }
     }
 
 }
