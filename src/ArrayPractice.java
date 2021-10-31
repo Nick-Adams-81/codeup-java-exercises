@@ -10,7 +10,10 @@ public class ArrayPractice {
         numbers[2] = 3;
         numbers[3] = 4;
 
-        System.out.println(Arrays.toString(numbers));
+        // enhanced for
+        for (int n : numbers) {
+            System.out.println(n);
+        }
 
         String[] names = new String[4];
         names[0] = "Nick";
@@ -20,9 +23,25 @@ public class ArrayPractice {
 
         System.out.println(Arrays.toString(names));
 
-        for(int i = 0; i < names.length; i++) {
+        // regular for loop
+        for (int i = 0; i < names.length; i++) {
             System.out.println(names[i]);
         }
+
+
+        // two-dimensional array
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+        // access the first element in the second row
+        System.out.println(matrix[1][0]); // 4
+        // the last element in the first row
+        System.out.println(matrix[0][2]); // 3
+        // the first element in the last row
+        System.out.println(matrix[2][0]); // 7
     }
 
 }
