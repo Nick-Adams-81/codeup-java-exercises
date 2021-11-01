@@ -33,11 +33,8 @@ public class ServerNameGenerator {
         nouns[8] = "Kick";
         nouns[9] = "Land";
 
-
-
         System.out.println(" Your server name is: ");
         System.out.println(adjectives[randomInt(0, 9)] + "-" + nouns[randomInt(0, 9)]);
-
 
 
     }
