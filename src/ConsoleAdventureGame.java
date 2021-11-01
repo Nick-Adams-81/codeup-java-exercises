@@ -236,7 +236,6 @@ public class ConsoleAdventureGame {
 
     public static void main(String[] args) {
 
-
         boolean confirmation;
 
         // initializing a scanner to capture user input

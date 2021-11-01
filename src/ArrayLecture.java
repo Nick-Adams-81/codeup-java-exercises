@@ -67,10 +67,16 @@ public class ArrayLecture {
         // two-dimensional array (matrix)
 
         int [][] matrix = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+                {1, 2, 3}, // arr1
+                {4, 5, 6}, // arr2
+                {7, 8, 9}  // arr3
+
         };
+
+        System.out.println(Arrays.toString(matrix[0]));
+        System.out.println(Arrays.toString(matrix[1]));
+        System.out.println(Arrays.toString(matrix[2]));
+        System.out.println(matrix[1][1]);
 
         for(int[] row : matrix) {
             System.out.println("+---+---+---+");

@@ -1,21 +1,12 @@
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class ArraysExercises {
 
 
-    public static String[] addPerson(String[] Person) {
+    public static Person[] addPerson(Person[] Person, Person name) {
 
-        String[] newPerson = new String[Person.length + 1];
-        for(int i = 0; i < Person.length; i++) {
-            newPerson[i] = Person[i];
-        }
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("input a new name");
-        newPerson[newPerson.length - 1] = scanner.nextLine();
-        System.out.println("New person array: " + Arrays.toString(newPerson));
-
+        Person[] newPerson = Arrays.copyOf(Person, Person.length + 1);
+        newPerson[newPerson.length - 1] = name;
 
         return newPerson;
     }
@@ -24,20 +15,24 @@ public class ArraysExercises {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
 
+        Person[] Person = new Person[3];
+        Person[0] = new Person("Nick");
+        Person[1] = new Person("Chris");
+        Person[2] = new Person("John");
 
-        String[] Person = new String[3];
-        Person[0] = "Nick";
-        Person[1] = "Chris";
-        Person[2] = "John";
+        Person newPerson = new Person("adam");
 
-        System.out.println("old person array: " + Arrays.toString(Person));
-        Person = addPerson(Person);
 
-        for (String name : Person) {
-            System.out.println(name);
+        for(Person n : Person) {
+            System.out.println(n.getName());
         }
 
 
+        Person = addPerson(Person, newPerson);
+
+        for(Person n : Person) {
+            System.out.println(n.getName());
+        }
 
 
     }
