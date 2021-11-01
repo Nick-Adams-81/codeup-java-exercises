@@ -18,6 +18,19 @@ public class ArrayLecture {
 
         String[] myBag = {"Snickers", "Reese's", "Brussel sprouts"};
         System.out.println(myBag.length);
-        System.out.println(myBag[1]);
+        //System.out.println(myBag[1]);
+
+        // old for loop
+//        for(int i = 0; i < myBag.length; i++) {
+//            System.out.println(myBag[i]);
+//        }
+
+        //enhanced for loop
+
+        for(String n : myBag) {
+            System.out.println(n);
+        }
+
+
     }
 }
