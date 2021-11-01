@@ -1,11 +1,11 @@
-import java.util.Scanner;
+
 public class Candy {
 
     public String name;
     public String size;
 
     public void talkAboutCandy() {
-        System.out.printf("Ahh, a %s! I see you got the %s size! Looks good", name, size);
+        System.out.printf("Ahh, a %s! I see you got the %s size! Looks good \n", name, size);
     }
 
     public Candy(String name) {
@@ -20,11 +20,6 @@ public class Candy {
 
 
 
-
-
-
-
-
     public static void main(String[] args) {
 
        Candy unknownCandy = new Candy("fun candy");
@@ -35,9 +30,8 @@ public class Candy {
         System.out.println(newUnknownCandy.name);
         System.out.println(newUnknownCandy.size);
 
+        unknownCandy.talkAboutCandy();
         newUnknownCandy.talkAboutCandy();
-
-
 
     }
 }
