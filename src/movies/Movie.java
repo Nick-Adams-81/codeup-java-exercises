@@ -10,5 +10,18 @@ public class Movie {
       this.category = category;
    }
 
+   public String getName() {
+      return name;
+   }
+
+   public String getCategory() {
+      return category;
+   }
+
+
+
+
+
+
 
 }

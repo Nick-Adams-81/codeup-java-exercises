@@ -7,8 +7,7 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-        System.out.println("input a string please");
-        scanner.nextLine();
+        System.out.println("input either, drama, musical, scifi, horror, or comedy");
         String userInput = scanner.nextLine();
         System.out.println(userInput);
         return userInput;
