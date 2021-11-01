@@ -4,7 +4,6 @@ public class ArraysExercises {
 
 
     public static Person[] addPerson(Person[] Person, Person name) {
-
         Person[] newPerson = Arrays.copyOf(Person, Person.length + 1);
         newPerson[newPerson.length - 1] = name;
 
@@ -20,20 +19,20 @@ public class ArraysExercises {
         Person[1] = new Person("Chris");
         Person[2] = new Person("John");
 
-        Person newPerson = new Person("adam");
-
-
-        for(Person n : Person) {
-            System.out.println(n.getName());
-        }
-
-
-        Person = addPerson(Person, newPerson);
+        Person adam = new Person("adam");
+        Person ken = new Person("Ken");
 
         for(Person n : Person) {
             System.out.println(n.getName());
         }
 
+        Person = addPerson(Person, adam);
+        Person = addPerson(Person, ken);
+
+        for(Person n : Person) {
+            System.out.println(n.getName());
+        }
 
     }
+
 }
