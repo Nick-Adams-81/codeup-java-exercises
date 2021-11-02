@@ -3,6 +3,7 @@ public class Person {
 //    private String name;
 
     public String name;
+    protected int age;
 
     public String getName() {
         return this.name;
@@ -18,6 +19,12 @@ public class Person {
     public Person(String name) {
         this.name = name;
     }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
 
     public void sayHello() {
         System.out.println("Hello " + name);
