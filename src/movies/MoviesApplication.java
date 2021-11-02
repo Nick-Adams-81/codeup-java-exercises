@@ -1,7 +1,6 @@
 package movies;
 
 import util.Input;
-import java.util.Arrays;
 import java.util.Objects;
 
 import static movies.MoviesArray.findAll;
@@ -10,7 +9,7 @@ import static movies.MoviesArray.findAll;
 public class MoviesApplication {
 
 
-    public static void choiceOne() {
+    public static void allMovies() {
         for (Movie movie : movieDb) {
             System.out.println(movie.getName());
         }
@@ -21,7 +20,6 @@ public class MoviesApplication {
             if (Objects.equals(movie.getCategory(), "drama")) {
                 System.out.println(movie.getName() + " -- " + movie.getCategory());
             }
-
         }
     }
 
@@ -30,7 +28,6 @@ public class MoviesApplication {
             if (Objects.equals(movie.getCategory(), "musical")) {
                 System.out.println(movie.getName() + " -- " + movie.getCategory());
             }
-
         }
     }
 
@@ -87,6 +84,9 @@ public class MoviesApplication {
                     break;
                 } else if (res.equalsIgnoreCase("comedy")) {
                     comedyCat();
+                    break;
+                } else if(res.equalsIgnoreCase("all")) {
+                    allMovies();
                     break;
                 }
 
