@@ -1,9 +1,11 @@
 public class Person {
 
-    private String name;
+//    private String name;
+
+    public String name;
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -11,9 +13,12 @@ public class Person {
     }
 
 
+    public Person() {};
+
     public Person(String name) {
         this.name = name;
     }
+
     public void sayHello() {
         System.out.println("Hello " + name);
     }
