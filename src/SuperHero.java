@@ -5,7 +5,6 @@ public class SuperHero extends Person{
     public SuperHero(String secretIdentity, String alterEgo) {
         super(secretIdentity);
         this.alterEgo = alterEgo;
-
     }
 
     public String getName() {
