@@ -3,7 +3,7 @@ public class Candy {
 
     public String name;
     public String size;
-    public String[] description;
+    public String description;
 
     public void talkAboutCandy() {
         System.out.printf("Ahh, a %s! I see you got the %s size! Looks good \n", name, size);
@@ -19,7 +19,7 @@ public class Candy {
         this.size = size;
     }
 
-    public Candy(String name, String size, String[] description) {
+    public Candy(String name, String size, String description) {
         this.name = name;
         this.size = size;
         this.description = description;
@@ -36,19 +36,24 @@ public class Candy {
         myBag[3] = "crunchy";
         myBag[4] = "tang";
 
-        Candy newCandy = new Candy("crunch", "large");
+
         for (String s : myBag) {
+
+            Candy newCandy = new Candy("crunch", "large");
             System.out.println("I have a peice of " + newCandy.name + " that is " + newCandy.size + " and could be described as " + s);
         }
 
        Candy unknownCandy = new Candy("fun candy");
        Candy newUnknownCandy = new Candy("funner candy", "Big!!!");
+       Candy goodCandy = new Candy("Mr goodbar", "large", "Crunchy");
 
 
 //        System.out.println(unknownCandy.name);
 //        System.out.println(unknownCandy.size);
 //        System.out.println(newUnknownCandy.name);
 //        System.out.println(newUnknownCandy.size);
+        System.out.println("I see you got the " + goodCandy.name + ", that's a " + goodCandy.size + " size, and could be described as " + goodCandy.description);
+
 
         unknownCandy.talkAboutCandy();
         newUnknownCandy.talkAboutCandy();
