@@ -4,7 +4,13 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scanner = new Scanner(System.in);
+
+
+    private Scanner scanner;
+
+    public Input() {
+        this.scanner = new Scanner(System.in);
+    }
 
     public String getString() {
         System.out.println("input either: drama, musical, scifi, horror, comedy, or all");
