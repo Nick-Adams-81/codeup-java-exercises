@@ -41,11 +41,12 @@ public class ConsoleAdventureGame {
                 if (enemyHealth <= 0) {
                     System.out.println(name + ", You defeated the enemy! You continue on your quest");
                     System.out.println("");
-                    monsterFight();
+                    monsterOne();
                     break;
                     // setting up the end of the game(when the hero dies)
                 } else if (heroHealth <= 0) {
                     System.out.println(name + " You died! Game over!");
+                    monsterTwo();
                     break;
                 }
 
@@ -107,10 +108,11 @@ public class ConsoleAdventureGame {
                 if (newEnemyHealth <= 0) {
                     System.out.println("You defeated your enemy!");
                     System.out.println("");
-                    monsterFight();
+                    monsterOne();
                     break;
                 } else if (newHeroHealth <= 0) {
                     System.out.println("You died, game over");
+                    monsterTwo();
                     break;
                 }
                 System.out.println("Do you want to continue the attack, take a potion then attack, or run like a coward?[attack/potion/run]");
@@ -141,7 +143,7 @@ public class ConsoleAdventureGame {
 
         // setting up boss fight hero and boss health
         int heroHealth = 200;
-        int enemyHealth = 250;
+        int enemyHealth = 350;
 
         // setting up a scanner for user input in boss fight
         Scanner scanner = new Scanner(System.in);
@@ -177,13 +179,14 @@ public class ConsoleAdventureGame {
                     // run this if the enemys health is 0 or less
                     if (enemyHealth <= 0) {
                         System.out.println("You have defeated the monster!!!!");
-                        monsterFight();
+                        monsterOne();
                         epilouge(name);
                         break;
 
                         // run this if the heros health is 0 or less
                     } else if (heroHealth <= 0) {
                         System.out.println("You have perished on your quest, a brave effort but all for naught...");
+                        monsterTwo();
                         break;
                     }
 
@@ -226,11 +229,65 @@ public class ConsoleAdventureGame {
 
     }
 
-    public static void monsterFight() {
-        System.out.println("  O              O   ");
-        System.out.println("--|-- |----     /  \\  ");
-        System.out.println("  |           --|__|--    ");
-        System.out.println(" / \\            /  \\    ");
+    public static void monsterOne() {
+        System.out.println("         " +
+                "                                      ( ;(); ).-.)\n" +
+                "                                        ( ; )(:)( ; )\n" +
+                "                                         (:)   ( ; )\n" +
+                "                                                (:)\n" +
+                "                                             .-'._.`-.\n" +
+                "                                            /         `.                 _,,...._\n" +
+                "                                            | /`-.     .                |```````.```-.\n" +
+                "                                            | |   `.__.|                |           `-.`.\n" +
+                "                                            | |   == \\=|                |              `.\\\n" +
+                "                               .--.---'-----\\  \\     //                 |                \\\\_\n" +
+                "                             .'    `.\\ _:,----. \\    /------.           |         __..---''\n" +
+                "                           .'        )) /.     \\ \\__/ / \\    `.          __..---''_..--''-''\n" +
+                "                         .'         // ,'       `----'  |      \\__..,--''__...--''       ||\n" +
+                "                       .'          ; : |           |   _....--''  _...--''   .-.         ||\n" +
+                "                      /-         .' |_ \\       __..--''  _,.,..--':   |     / .(_\\       ||\n" +
+                "                     /_.+-+-+..___ .' `-,._.-''  _,..---'.         `.+.+ +.+  ) / )      ||\n" +
+                "                    <( + + + .-.-./      (  _.-'' '   /   `.       (+ + + + +  (_//      ||\n" +
+                "                     `+MJP..( (( (|       ;\"    .'   ;      `.       + + + + ._(_/)      ||\n" +
+                "                    '''    __\\ \\\\ \\\\     ;    .'  .-'         ``-----'+'+'     (_/       '|\n" +
+                "                    ..---''   `-'`-'`._.'    _..-'\\                     |          /\\    /\\\n" +
+                "                               .  ' `--  '--'      \\                    |         /  )  /  \\\n" +
+                "                               |   /                |                   \\    _,,-;   `'- -.:\n" +
+                "                               |  |    .---.   .-------.                 _.-' _,'            `.\n" +
+                "                              _`  (_.-'     `.((=#=#=#=#)            _.-'                     `.\n" +
+                "                                   \\         \\ ((=#=#=#=)         .-'                  . -.    (\n" +
+                "                                    \\         \\ (#=#=#=#______..-'             /      `.(_.'    \\\n" +
+                "   '     /'                          \\         . =#=#=      .' |                                 .\n" +
+                "  /     /'                            \\     _^_ . #=       / |                                    \\\n" +
+                " /     '                      \\        \\  .'   `.\\        ( \\                                      .\n" +
+                ".      ;                      `.        \\/       \\         `. \\                                     .\\\n" +
+                "|     '                        |        (o        )         `.                 /  `-.__\\.        _    .\n" +
+                "|    '                                   |\\      /|          `.              ,'          `.  .  ( \\   |\n" +
+                "|    |                        ,|         | `----' |           |             /              `\\ `. `-' .'\n" +
+                "|    |                       /           |        |/           |          .'                 '--\\.,-'\n" +
+                "|    |                                   |      .-'/           \\         /\n" +
+                "|    |                                   `.    / .'             )       /\n"
+          );
+    }
+
+    public static void monsterTwo() {
+        System.out.println("                      ,-.\n" +
+                "       ___,---.__          /'|`\\          __,---,___\n" +
+                "    ,-'    \\`    `-.____,-'  |  `-.____,-'    //    `-.\n" +
+                "  ,'        |           ~'\\     /`~           |        `.\n" +
+                " /      ___//              `. ,'          ,  , \\___      \\\n" +
+                "|    ,-'   `-.__   _         |        ,    __,-'   `-.    |\n" +
+                "|   /          /\\_  `   .    |    ,      _/\\          \\   |\n" +
+                "\\  |           \\ \\`-.___ \\   |   / ___,-'/ /           |  /\n" +
+                " \\  \\           | `._   `\\\\  |  //'   _,' |           /  /\n" +
+                "  `-.\\         /'  _ `---'' , . ``---' _  `\\         /,-'\n" +
+                "     ``       /     \\    ,='/ \\`=.    /     \\       ''\n" +
+                "             |__   /|\\_,--.,-.--,--._/|\\   __|\n" +
+                "             /  `./  \\\\`\\ |  |  | /,//' \\,'  \\\n" +
+                "eViL        /   /     ||--+--|--+-/-|     \\   \\\n" +
+                "           |   |     /'\\_\\_\\ | /_/_/`\\     |   |\n" +
+                "            \\   \\__, \\_     `~'     _/ .__/   /\n" +
+                "             `-._,-'   `-._______,-'   `-._,-'");
     }
 
 
