@@ -4,7 +4,7 @@ import util.Input;
 
 public class CircleApp {
 
-    public static void circleStuff() {
+    public static void circle() {
         Input input = new Input();
         double in = input.getDouble(1, 1000);
         Circle circle = new Circle(in);
@@ -13,7 +13,7 @@ public class CircleApp {
     }
 
     public static void main(String[] args) {
-        circleStuff();
+        circle();
     }
 
 }

@@ -13,7 +13,6 @@ public class Candy {
     public Candy(String name) {
         this.name = name;
         this.size = "undefined";
-
     }
 
     public Candy(String name, String size) {
@@ -33,14 +32,6 @@ public class Candy {
 
     public static void main(String[] args) {
 
-//        String[] myBag = new String[5];
-//        myBag[0] = "Candy-coated";
-//        myBag[1] = "Chocolate";
-//        myBag[2] = "bite-sized";
-//        myBag[3] = "crunchy";
-//        myBag[4] = "tang";
-
-
 
        Candy unknownCandy = new Candy("fun candy");
        Candy newUnknownCandy = new Candy("funner candy", "Big");
@@ -55,18 +46,10 @@ public class Candy {
             System.out.printf(" Here is a %s with size: %s, it is described as having the following traits: %s \n", a.name, a.size, description);
         }
 
-
-
-//        System.out.println(unknownCandy.name);
-//        System.out.println(unknownCandy.size);
-//        System.out.println(newUnknownCandy.name);
-//        System.out.println(newUnknownCandy.size);
-//        System.out.println("I see you got the " + goodCandy.name + ", that's a " + goodCandy.size + " size, and could be described as " + Arrays.toString(goodCandy.description));
-
-
+        
         unknownCandy.talkAboutCandy();
         newUnknownCandy.talkAboutCandy();
-//        goodCandy.talkAboutCandy();
+        goodCandy.talkAboutCandy();
 
     }
 }
