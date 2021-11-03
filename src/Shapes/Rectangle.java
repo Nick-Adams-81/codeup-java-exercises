@@ -6,15 +6,12 @@ public class Rectangle {
     protected int width;
 
 
-
     public Rectangle(int length, int width) {
         this.length = length;
         this.width = width;
     }
 
-
-
-    public  int getArea() {
+    public int getArea() {
         return length * width;
     }
 
