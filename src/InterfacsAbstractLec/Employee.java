@@ -1,12 +1,12 @@
 package InterfacsAbstractLec;
 
-abstract class Employee {
+abstract class Employee implements DailyWork{
 
     // initializing variables
     protected String name;
     protected String department;
 
-    // employee contructor
+    // employee constructor
     public Employee(String name, String department) {
         this.name = name;
         this.department = department;
@@ -21,10 +21,5 @@ abstract class Employee {
     public String getDepartment() {
         return this.department;
     }
-
-    // abstract method for use in sub-classes
-    public abstract String work();
-
-
 
 }
