@@ -22,6 +22,7 @@ abstract class Employee {
         return this.department;
     }
 
+    // abstract method for use in sub-classes
     public abstract String work();
 
 
