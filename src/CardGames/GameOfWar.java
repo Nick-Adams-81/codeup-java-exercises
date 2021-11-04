@@ -17,19 +17,18 @@ public class GameOfWar {
         Scanner sc = new Scanner(System.in);
         Card[] deck = CardsArray.getAllCards();
 
-        for(Card card : deck) {
-            System.out.println(card.value);
+        for (Card card : deck) {
+            System.out.println(card.suit + " " + card.value);
+
+            if(card.value == randomInt(1, 13)) {
+                System.out.println("your card is the " + card.value + " of " + card.suit);
+            }
         }
 
-
         System.out.println(playerHand());
-
         System.out.println("Input players name");
         String name = sc.nextLine();
         System.out.println(name + ", good luck");
-
-
-
 
     }
 

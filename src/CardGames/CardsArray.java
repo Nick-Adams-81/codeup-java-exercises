@@ -64,7 +64,12 @@ public class CardsArray {
                 new Card("clubs", 13),
                 new Card("diamonds", 13),
                 new Card("hearts", 13),
-                new Card("spades", 13)
+                new Card("spades", 13),
+
+                new Card("clubs", 14),
+                new Card("diamonds", 14),
+                new Card("hearts", 14),
+                new Card("spades", 14)
 
         };
     }

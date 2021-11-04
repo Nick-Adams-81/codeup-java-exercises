@@ -44,7 +44,6 @@ public class MoviesApplication {
             if (Objects.equals(movie.getCategory(), "horror")) {
                 System.out.println(movie.getName() + " -- " + movie.getCategory());
             }
-
         }
     }
 
@@ -89,18 +88,13 @@ public class MoviesApplication {
                     allMovies();
                     break;
                 }
-
             }
 
             System.out.println("continue? y/n");
             String response = input.getString();
             confirm = response.equalsIgnoreCase("y");
 
-
         } while (confirm);
 
-
     }
-
-
 }

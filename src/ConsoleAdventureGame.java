@@ -11,9 +11,12 @@ public class ConsoleAdventureGame {
     // level one method
     public static void levelOne(String name, int heroHealth, int enemyHealth) {
 
+        // initial potions
+        int potions = 2;
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("You start you adventure, early on your path you encounter your first enemy!");
-        System.out.println("Your health points are: " + heroHealth + ", the enemy has: " + enemyHealth + " health points, do you wish to attack?[y/n]");
+        System.out.println("Your health points are: " + heroHealth + ", and you have " + potions + " potions, the enemy has: " + enemyHealth + " health points, do you wish to attack?[y/n]");
 
         // if the user says yes to attack run this code
         String action = scanner.nextLine();
@@ -22,8 +25,8 @@ public class ConsoleAdventureGame {
             // initializing a boolean to run our do while loop
             boolean attack;
 
-            // initial potions
-            int potions = 2;
+//            // initial potions
+//            int potions = 2;
 
             // running the game code in a do while loop
             do {
@@ -40,7 +43,7 @@ public class ConsoleAdventureGame {
                 // setting up the end of the gaem(when the enemy dies)
                 if (enemyHealth <= 0) {
                     System.out.println(name + ", You defeated the enemy! You continue on your quest");
-                    System.out.println("");
+                    System.out.println();
                     monsterOne();
                     break;
                     // setting up the end of the game(when the hero dies)
@@ -229,6 +232,25 @@ public class ConsoleAdventureGame {
 
     }
 
+    public static void money() {
+
+        System.out.println("||====================================================================||\n" +
+                "||//$\\\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\//$\\\\||\n" +
+                "||(100)==================| FEDERAL RESERVE NOTE |================(100)||\n" +
+                "||\\\\$//        ~         '------========--------'                \\\\$//||\n" +
+                "||<< /        /$\\              // ____ \\\\                         \\ >>||\n" +
+                "||>>|  12    //L\\\\            // ///..) \\\\         L38036133B   12 |<<||\n" +
+                "||<<|        \\\\ //           || <||  >\\  ||                        |>>||\n" +
+                "||>>|         \\$/            ||  $$ --/  ||        One Hundred     |<<||\n" +
+                "||<<|      L38036133B        *\\\\  |\\_/  //* series                 |>>||\n" +
+                "||>>|  12                     *\\\\/___\\_//*   1989                  |<<||\n" +
+                "||<<\\      Treasurer     ______/Franklin\\________     Secretary 12 />>||\n" +
+                "||//$\\                 ~|UNITED STATES OF AMERICA|~               /$\\\\||\n" +
+                "||(100)===================  ONE HUNDRED DOLLARS =================(100)||\n" +
+                "||\\\\$//\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\\$//||\n" +
+                "||====================================================================||");
+    }
+
     public static void monsterOne() {
         System.out.println("         " +
                 "                                      ( ;(); ).-.)\n" +
@@ -304,6 +326,8 @@ public class ConsoleAdventureGame {
         if (res.equalsIgnoreCase("y")) {
 
             do {
+
+                money();
                 // setting up the hero and enemy health
                 int heroHealth = 100;
                 int enemyHealth = 80;
@@ -311,6 +335,7 @@ public class ConsoleAdventureGame {
                 // level 2 hero and enemy health
                 int newHeroHealth = 125;
                 int newEnemyHealth = 100;
+
                 // asking the user for their name
                 System.out.println("Tell me your name");
                 String name = scanner.nextLine();
@@ -320,7 +345,6 @@ public class ConsoleAdventureGame {
                 levelOne(name, heroHealth, enemyHealth);
                 levelTwo(name, newHeroHealth, newEnemyHealth);
                 bossFight(name, heroHealth, enemyHealth);
-
 
                 // asking the user if they want to play again
                 System.out.println("Play again?[y/n]");
