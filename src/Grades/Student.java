@@ -22,14 +22,15 @@ public class Student {
 
     public double getGradeAverage() {
 
-        double calculate = -1;
+        double calculateSum = 0;
+        double sum = 0;
         for (int i = 0; i < grades.size(); i++) {
-            //System.out.println(grades.get(i));
-            calculate = grades.get(i) + grades.get(i);
-            System.out.println(calculate);
+
+            calculateSum += grades.get(i);
+            sum = calculateSum / grades.size();
         }
-        //System.out.println(grades.size());
-        return calculate;
+
+        return sum;
     }
 
 
@@ -38,10 +39,11 @@ public class Student {
         nick.addGrade(86);
         nick.addGrade(50);
         nick.addGrade(100);
+        nick.addGrade(24);
 
 
         //System.out.println(nick.grades);
-        nick.getGradeAverage();
+        System.out.println(nick.getGradeAverage());
 
     }
 
