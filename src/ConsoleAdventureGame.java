@@ -156,7 +156,7 @@ public class ConsoleAdventureGame {
         if (response.equalsIgnoreCase("fight")) {
 
             // giving the user 2 potions
-            int potions = 2;
+            int potions = 3;
 
             // asking the user one more time if they want to fight the boss
             System.out.println(name + ", You have gained much experience, your health is now: " + heroHealth + ", but you only have " + potions + " potions, but your enemy is powerful, his health is: " + enemyHealth + ", \n do you want to fight him?[y/n]");
@@ -171,7 +171,7 @@ public class ConsoleAdventureGame {
                 do {
 
                     // using the random int method to get random attack points for the hero and the enemy
-                    int heroAttack = randomInt(10, 80);
+                    int heroAttack = randomInt(20, 90);
                     int enemyAttack = randomInt(30, 60);
 
                     // adjusting the hero and enemy health after an attack
@@ -311,6 +311,8 @@ public class ConsoleAdventureGame {
                 "            \\   \\__, \\_     `~'     _/ .__/   /\n" +
                 "             `-._,-'   `-._______,-'   `-._,-'");
     }
+
+
 
 
     public static void main(String[] args) {
