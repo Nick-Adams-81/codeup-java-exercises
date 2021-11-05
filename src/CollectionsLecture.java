@@ -24,15 +24,30 @@ public class CollectionsLecture {
         nums.add(120);
         nums.add(0, 7);
         nums.add(3, 14);
+        nums.add(1, 14);
 
         System.out.println(nums);
-
         System.out.println(nums.contains(22));
         System.out.println(nums.isEmpty());
         System.out.println(nums.lastIndexOf(7));
         nameOfVar2.remove("Steve");
 
+        // remove a number based on the object Integer
+        nums.remove((Integer) 14);
+
+        System.out.println(nums);
+
+        // removing numbers based on index
+        nums.remove(3);
+
         System.out.println(nameOfVar2);
+        System.out.println(nums);
+
+        // advanced for loop to iterate over an array list
+        for(int number : nums) {
+            System.out.println(number);
+        }
+
 
     }
 }
