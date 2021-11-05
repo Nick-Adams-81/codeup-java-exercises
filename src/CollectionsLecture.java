@@ -27,5 +27,12 @@ public class CollectionsLecture {
 
         System.out.println(nums);
 
+        System.out.println(nums.contains(22));
+        System.out.println(nums.isEmpty());
+        System.out.println(nums.lastIndexOf(7));
+        nameOfVar2.remove("Steve");
+
+        System.out.println(nameOfVar2);
+
     }
 }
