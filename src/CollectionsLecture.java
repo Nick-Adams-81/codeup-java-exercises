@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CollectionsLecture {
 
@@ -48,6 +49,30 @@ public class CollectionsLecture {
             System.out.println(number);
         }
 
+        // Hash Maps
+        System.out.println(" ====== Hash Maps ====== ");
+
+        HashMap<String, String> nameVar = new HashMap<>();
+
+        nameVar.put("Nick", "Nick Adams");
+        nameVar.put("John", "John doe");
+        nameVar.put("Ben", "Ben Sisko");
+
+        System.out.println(nameVar);
+        System.out.println(nameVar.get("Nick"));
+        System.out.println(nameVar.getOrDefault("Alex", "No user found"));
+        System.out.println(nameVar.containsKey("Ben"));
+        System.out.println(nameVar.containsValue("John doe"));
+
+        nameVar.putIfAbsent("Alex", "Alex Jones");
+        System.out.println(nameVar);
+        nameVar.remove("Alex");
+        System.out.println(nameVar);
+        nameVar.replace("John", "Jake");
+        System.out.println(nameVar);
+        nameVar.clear();
+        System.out.println(nameVar);
+        System.out.println(nameVar.isEmpty());
 
     }
 }
