@@ -25,14 +25,13 @@ public class Student {
         double calculateSum = 0;
         double sum = 0;
         for (int i = 0; i < grades.size(); i++) {
-
             calculateSum += grades.get(i);
             sum = calculateSum / grades.size();
         }
 
         return sum;
-    }
 
+    }
 
     public static void main(String[] args) {
         Student nick = new Student("Nick");
@@ -41,11 +40,9 @@ public class Student {
         nick.addGrade(100);
         nick.addGrade(24);
 
-
-        //System.out.println(nick.grades);
         System.out.println(nick.getGradeAverage());
+        System.out.println("nick.getName() = " + nick.getName());
 
     }
-
 
 }
