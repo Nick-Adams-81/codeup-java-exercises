@@ -22,14 +22,17 @@ public class GradesApplication {
         students.put("JohnnyDoughboy ", johnny);
         students.put("JasonVorhees ", jason);
 
-
         nick.addGrade(87);
         nick.addGrade(65);
         nick.addGrade(98);
 
+        //nick.getGrades();
+
         walt.addGrade(85);
         walt.addGrade(76);
         walt.addGrade(100);
+
+       // walt.getGrades();
 
         johnny.addGrade(45);
         johnny.addGrade(50);
@@ -39,29 +42,31 @@ public class GradesApplication {
         jason.addGrade(75);
         jason.addGrade(85);
 
+
+
+
         boolean confirm;
 
         do {
-
 
             System.out.println("Welcome! here is a list of students you can see more about, who would you like to see?");
             System.out.println(students.keySet());
             String res = sc.nextLine();
 
-            if(res.equalsIgnoreCase("JasonVorheesHalloween")) {
+            if(res.equalsIgnoreCase("JasonVorhees")) {
                 System.out.println();
-                System.out.println("This student's name is " + jason.getName() + ", and his grade average is " + jason.getGradeAverage());
+                System.out.println("This student's name is " + jason.getName() + ", and his grade average is " + jason.getGradeAverage() + ", His individual grades are above" + jason.getGrades());
 
             } else if(res.equalsIgnoreCase("dubZ")) {
                 System.out.println();
-                System.out.println("This student's name is " + walt.getName() + ", his grade average is " + walt.getGradeAverage());
+                System.out.println("This student's name is " + walt.getName() + ", his grade average is " + walt.getGradeAverage() + ", his grades are above " + walt.getGrades());
             } else if(res.equalsIgnoreCase("theBigDeal916")) {
                 System.out.println();
-                System.out.println("This student's name is " + nick.getName() + ", and his grade average is " + nick.getGradeAverage());
+                System.out.println("This student's name is " + nick.getName() + ", and his grade average is " + nick.getGradeAverage() + ", his individual grades are above " + nick.getGrades());
 
             } else if(res.equalsIgnoreCase("JohnnyDoughboy")) {
                 System.out.println();
-                System.out.println("This is " + johnny.getName() + ", his grade average is " + johnny.getGradeAverage());
+                System.out.println("This is " + johnny.getName() + ", his grade average is " + johnny.getGradeAverage() + ", his individual grades are above " + johnny.getGrades());
 
             } else {
                 System.out.println("No students with that username were found");
@@ -72,6 +77,8 @@ public class GradesApplication {
             confirm = response.equalsIgnoreCase("y");
 
         }while(confirm);
+
+        System.out.println("Goodbye, and have a great day!");
 
 
     }
