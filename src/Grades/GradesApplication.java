@@ -55,24 +55,37 @@ public class GradesApplication {
 
             if(res.equalsIgnoreCase("JasonVorhees")) {
                 System.out.println();
-                System.out.println("This student's name is " + jason.getName() + ", and his grade average is " + jason.getGradeAverage() + ", His individual grades are above" + jason.getGrades());
+                System.out.println("This student's name is " + jason.getName() + ", and his grade average is " + jason.getGradeAverage() + ", His individual grades are above" + jason.getGrades(jason.getName()));
 
             } else if(res.equalsIgnoreCase("dubZ")) {
                 System.out.println();
-                System.out.println("This student's name is " + walt.getName() + ", his grade average is " + walt.getGradeAverage() + ", his grades are above " + walt.getGrades());
+                System.out.println("This student's name is " + walt.getName() + ", his grade average is " + walt.getGradeAverage() + ", his grades are above " + walt.getGrades(walt.getName()));
             } else if(res.equalsIgnoreCase("theBigDeal916")) {
                 System.out.println();
-                System.out.println("This student's name is " + nick.getName() + ", and his grade average is " + nick.getGradeAverage() + ", his individual grades are above " + nick.getGrades());
+                System.out.println("This student's name is " + nick.getName() + ", and his grade average is " + nick.getGradeAverage() + ", his individual grades are above " + nick.getGrades(nick.getName()));
 
             } else if(res.equalsIgnoreCase("JohnnyDoughboy")) {
                 System.out.println();
-                System.out.println("This is " + johnny.getName() + ", his grade average is " + johnny.getGradeAverage() + ", his individual grades are above " + johnny.getGrades());
+                System.out.println("This is " + johnny.getName() + ", his grade average is " + johnny.getGradeAverage() + ", his individual grades are above " + johnny.getGrades(johnny.getName()));
 
             } else {
                 System.out.println("No students with that username were found");
             }
 
-            System.out.println("Continue?[y/n]");
+            System.out.println("would you like to see all the students grades?[y/n]");
+            String seeAllGrades = sc.nextLine();
+
+            if(seeAllGrades.equalsIgnoreCase("y")) {
+                jason.getGrades(jason.getName());
+                System.out.println();
+                walt.getGrades(walt.getName());
+                System.out.println();
+                nick.getGrades(nick.getName());
+                System.out.println();
+                johnny.getGrades(johnny.getName());
+            }
+
+            System.out.println("Continue seeing student info?[y/n]");
             String response = sc.nextLine();
             confirm = response.equalsIgnoreCase("y");
 

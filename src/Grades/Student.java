@@ -31,11 +31,11 @@ public class Student {
         return sum;
     }
 
-    public double getGrades() {
+    public double getGrades(String name) {
         double grade = 0;
         for (int i = 0; i < grades.size(); i++) {
             grade = grades.get(i);
-            System.out.println("This students grades are Grade " + (i + 1) + ": " + grade);
+            System.out.println(name +  "'s grades are Grade " + (i + 1) + ": " + grade);
         }
         return grade;
     }
@@ -47,7 +47,7 @@ public class Student {
         nick.addGrade(100);
         nick.addGrade(24);
 
-        nick.getGrades();
+        nick.getGrades(nick.getName());
         System.out.println(nick.getGradeAverage());
         System.out.println("nick.getName() = " + nick.getName());
 
