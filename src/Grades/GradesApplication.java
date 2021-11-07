@@ -1,8 +1,10 @@
 package Grades;
 
-import java.util.HashMap;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Scanner;
+
 
 
 public class GradesApplication {
@@ -13,16 +15,18 @@ public class GradesApplication {
         String response1 = sc.nextLine();
 
         if(response1.equalsIgnoreCase("y")) {
-            System.out.println(allGradeAverage);
+            System.out.println("The overall classes grade average is: " + allGradeAverage);
         }
 
     }
 
 
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
+
 
         Student nick = new Student("nick");
         Student walt = new Student("Walt");
@@ -110,8 +114,7 @@ public class GradesApplication {
             }
 
             allGradeAverage(allGradeAverage);
-
-
+            System.out.println();
 
             System.out.println("Continue seeing student info?[y/n]");
             String response = sc.nextLine();
