@@ -21,8 +21,6 @@ public class GradesApplication {
     }
 
 
-
-
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
@@ -61,7 +59,6 @@ public class GradesApplication {
         karen.addGrade(90);
 
         nick.recordAttendance("11-08-2021", "P");
-
         System.out.println(nick.getAttendance());
 
 
@@ -104,6 +101,7 @@ public class GradesApplication {
             String seeAllGrades = sc.nextLine();
 
             if (seeAllGrades.equalsIgnoreCase("y")) {
+
                 jason.getGrades(jason.getName());
                 System.out.println();
                 walt.getGrades(walt.getName());
@@ -114,6 +112,7 @@ public class GradesApplication {
                 System.out.println();
                 karen.getGrades(karen.getName());
                 System.out.println();
+
             }
 
             allGradeAverage(allGradeAverage);
