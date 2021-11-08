@@ -9,6 +9,7 @@ public class Input {
     private Scanner scanner;
 
     public Input() {
+
         this.scanner = new Scanner(System.in);
     }
 
@@ -26,14 +27,41 @@ public class Input {
         return userRes.equalsIgnoreCase("y") || userRes.equalsIgnoreCase("yes");
     }
 
+    public int getInt() {
+        try{
+            String userNum = getString();
+            return Integer.valueOf(userNum);
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getMessage();
+            return getInt();
+        }
+
+    }
+
     public int getInt(int min, int max) {
         System.out.println("Enter a number between 1 and 10");
         int userNumber = scanner.nextInt();
+
         if (userNumber <= max && userNumber >= min) {
             return userNumber;
         } else {
             return getInt(min, max);
         }
+    }
+
+
+
+    public int getDouble() {
+        try{
+            String userNum = getString();
+            return Integer.valueOf(userNum);
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getMessage();
+            return getInt();
+        }
+
     }
 
     public double getDouble(double min, double max) {
