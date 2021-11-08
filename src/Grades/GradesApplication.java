@@ -65,9 +65,8 @@ public class GradesApplication {
         System.out.println(nick.getAttendance());
 
 
-        double allGradeAverage = ((nick.getGradeAverage() + walt.getGradeAverage() + jason.getGradeAverage() + johnny.getGradeAverage()) + karen.getGradeAverage()/ students.size()) ;
-
-
+        double allGradeAverage = ((nick.getGradeAverage() + walt.getGradeAverage() + jason.getGradeAverage() + johnny.getGradeAverage() + karen.getGradeAverage()) / (students.size() + 1));
+        System.out.println(allGradeAverage);
 
         boolean confirm;
 
