@@ -60,6 +60,10 @@ public class GradesApplication {
         karen.addGrade(80);
         karen.addGrade(90);
 
+        nick.recordAttendance("11-08-2021", "P");
+
+        System.out.println(nick.getAttendance());
+
 
         double allGradeAverage = ((nick.getGradeAverage() + walt.getGradeAverage() + jason.getGradeAverage() + johnny.getGradeAverage()) + karen.getGradeAverage()/ students.size()) ;
 
