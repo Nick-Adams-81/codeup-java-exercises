@@ -15,11 +15,12 @@ public class GroceryListApp {
 
 
         boolean response;
-        do {
-            System.out.println("Do you want to make a grocery list?[y/n]");
-            String res1 = sc.nextLine();
 
-            if(res1.equalsIgnoreCase("y")) {
+        System.out.println("Do you want to make a grocery list?[y/n]");
+        String res1 = sc.nextLine();
+
+        do {
+            if (res1.equalsIgnoreCase("y")) {
                 System.out.println("Enter a grocery item to ad to your list");
                 String responses = sc.nextLine();
                 System.out.println("How many " + responses + " Would you like?");
@@ -36,9 +37,9 @@ public class GroceryListApp {
 
         } while (response);
 
+        System.out.println("Thanks for shopping!");
 
     }
-
 
 
 }
