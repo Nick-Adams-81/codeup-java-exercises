@@ -1,4 +1,5 @@
 package Groceries;
+
 import java.util.HashMap;
 
 
@@ -10,7 +11,7 @@ public class Grocery {
         this.groceries = new HashMap<>();
     }
 
-    public HashMap<String, Integer> getgroceries() {
+    public HashMap<String, Integer> getGroceries() {
         return this.groceries;
     }
 

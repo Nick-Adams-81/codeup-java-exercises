@@ -14,7 +14,7 @@ public class Input {
     }
 
     public String getString() {
-        System.out.println("input either: drama, musical, scifi, horror, comedy, or all");
+        System.out.println("Enter input please...");
         String userInput = scanner.nextLine();
         System.out.println(userInput);
         return userInput;
@@ -28,21 +28,21 @@ public class Input {
     }
 
     public int getInt() {
-        try{
+
+        try {
             String userNum = getString();
             return Integer.valueOf(userNum);
         } catch(Exception e) {
+            System.out.println("please enter a number");
             e.printStackTrace();
             e.getMessage();
             return getInt();
         }
-
     }
 
     public int getInt(int min, int max) {
         System.out.println("Enter a number between 1 and 10");
         int userNumber = scanner.nextInt();
-
         if (userNumber <= max && userNumber >= min) {
             return userNumber;
         } else {
@@ -53,10 +53,12 @@ public class Input {
 
 
     public int getDouble() {
-        try{
+
+        try {
             String userNum = getString();
             return Integer.valueOf(userNum);
         } catch(Exception e) {
+            System.out.println("please enter a number");
             e.printStackTrace();
             e.getMessage();
             return getInt();
