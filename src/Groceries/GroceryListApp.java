@@ -14,18 +14,15 @@ public class GroceryListApp {
         categories.add("Meats");
         categories.add("other");
 
-        //System.out.println(categories);
-
         Grocery rando = new Grocery();
         Grocery fruits = new Grocery();
         Grocery vegetables = new Grocery();
         Grocery meats = new Grocery();
+
         fruits.addGrocery("banana", 6);
         vegetables.addGrocery("broccoli", 8);
         meats.addGrocery("steak", 2);
         rando.addGrocery("Cereal", 4);
-
-        //System.out.println(rando.getGroceries() + " " + fruits.getGroceries() + " " + vegetables.getGroceries() + " " + meats.getGroceries());
 
 
         boolean response;
@@ -82,11 +79,12 @@ public class GroceryListApp {
                 }
 
             } else {
+
                 System.out.println("Maybe next time!");
                 break;
             }
 
-            System.out.println("Do you want to add another item, your list looks like this...[y/n]");
+            System.out.println("Do you want to add another item?[y/n]");
             sc.nextLine();
             String res = sc.nextLine();
             response = res.equalsIgnoreCase("y");
@@ -97,6 +95,7 @@ public class GroceryListApp {
         String response2 = sc.nextLine();
 
         boolean confirm;
+
         do{
 
             if(response2.equalsIgnoreCase("y")) {
