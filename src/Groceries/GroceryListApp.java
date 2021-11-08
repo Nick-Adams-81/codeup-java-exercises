@@ -4,15 +4,11 @@ import java.util.Scanner;
 
 public class GroceryListApp {
 
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Grocery rando = new Grocery();
         rando.addGrocery("Cereal", 4);
-
-        System.out.println(rando.getgroceries());
-
 
         boolean response;
 
@@ -20,6 +16,7 @@ public class GroceryListApp {
         String res1 = sc.nextLine();
 
         do {
+
             if (res1.equalsIgnoreCase("y")) {
                 System.out.println("Enter a grocery item to ad to your list");
                 String responses = sc.nextLine();
@@ -28,6 +25,11 @@ public class GroceryListApp {
 
                 rando.addGrocery(responses, response2);
                 System.out.println(rando.getgroceries());
+
+            } else {
+
+                System.out.println("Maybe next time!");
+
             }
 
             System.out.println("Do you want to add another item?[y/n]");
