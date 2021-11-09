@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class Input {
 
 
-
     private Scanner scanner;
 
     public Input() {
-
         this.scanner = new Scanner(System.in);
     }
 
@@ -32,10 +30,9 @@ public class Input {
         try {
             String userNum = getString();
             return Integer.valueOf(userNum);
-        } catch(Exception e) {
+        } catch(NumberFormatException e) {
             System.out.println("please enter a number");
             e.printStackTrace();
-            e.getMessage();
             return getInt();
         }
     }
@@ -51,17 +48,15 @@ public class Input {
     }
 
 
-
-    public int getDouble() {
+    public double getDouble() {
 
         try {
             String userNum = getString();
-            return Integer.valueOf(userNum);
-        } catch(Exception e) {
+            return Double.valueOf(userNum);
+        } catch(NumberFormatException e) {
             System.out.println("please enter a number");
             e.printStackTrace();
-            e.getMessage();
-            return getInt();
+            return getDouble();
         }
 
     }
@@ -74,6 +69,7 @@ public class Input {
         } else {
             return getDouble(min, max);
         }
+
     }
 
 
